@@ -1,0 +1,322 @@
+---
+import "../styles/global.css";
+import { ClientRouter } from 'astro:transitions';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Experiencia Laboral | Miller Arias</title>
+    <ClientRouter />
+  </head>
+  <body class="bg-neutral-950 text-neutral-50 min-h-screen p-6 md:p-16 font-sans selection:bg-cyan-500 selection:text-white">
+    <main class="max-w-3xl mx-auto container-layout">
+      
+      <!-- Botón de retorno -->
+      <a href="/" class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group">
+        <span class="inline-block transform group-hover:-translate-x-1 transition-transform">←</span> 
+        Volver al inicio
+      </a>
+
+      <!-- CABECERA DE LA PÁGINA -->
+      <header transition:name="card-experiencia" class="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-neutral-800 shadow-2xl main-header">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
+            Historial Profesional
+          </span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+          Trayectoria & Experiencia
+        </h1>
+        <p class="text-neutral-400 text-base md:text-lg leading-relaxed">
+          Ingeniero Electrónico y Desarrollador Full Stack enfocado en construir software mantenible, escalable y bien estructurado. Mi recorrido técnico y los retos superados en cada rol.
+        </p>
+      </header>
+
+      <!-- SECCIÓN DE EXPERIENCIAS -->
+      <div class="experience-list">
+        
+        <!-- PUESTO 1: SYMPHONY OSS -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-row">
+              <h2 class="text-2xl md:text-3xl font-bold text-neutral-100 tracking-tight">
+                Desarrollador Full Stack
+              </h2>
+              <span class="job-date font-mono text-neutral-500 text-sm">
+                Feb 2026 — Actualidad
+              </span>
+            </div>
+            <p class="text-cyan-400 text-base font-medium mt-1">
+              Symphony OSS <span class="text-neutral-600 font-normal hidden md:inline-block ml-2">• Plataforma Open Source de Telecomunicaciones</span>
+            </p>
+            <p class="text-neutral-600 text-sm font-normal md:hidden mt-0.5">
+              Plataforma Open Source de Telecomunicaciones
+            </p>
+          </div>
+          
+          <div class="job-body">
+            <p class="text-neutral-400 text-base md:text-lg leading-relaxed description-text">
+              Desarrollo de funcionalidades clave en la plataforma open source orientada a la gestión de redes de telecomunicaciones, abarcando desde la capa de datos hasta la interfaz de usuario.
+            </p>
+            
+            <ul class="achievement-list">
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Implementación de interfaces frontend modernas y responsivas con <strong>React.js, Relay y Material UI</strong>.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Arquitectura y desarrollo backend optimizado utilizando <strong>Go (Golang) y GraphQL</strong>.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Implementación avanzada de funcionalidades multi-tenant controladas dinámicamente mediante <strong>feature flags</strong> por tenant.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Corrección y optimización de filtros en el backend junto a consultas GraphQL de alta eficiencia.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Soporte global mediante el despliegue e implementación de internacionalización (<strong>i18n</strong>).</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Refactoring continuo de componentes críticos para mejorar la mantenibilidad y consistencia general del código.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-cyan-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Trabajo en equipo bajo metodología ágil utilizando <strong>Git, GitHub y Jira</strong>.</span>
+              </li>
+            </ul>
+
+            <div class="badge-container">
+              <span class="tech-badge">Go</span>
+              <span class="tech-badge">GraphQL</span>
+              <span class="tech-badge">React.js</span>
+              <span class="tech-badge">Relay</span>
+              <span class="tech-badge">Git</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PUESTO 2: CIMA OCUPACIONAL -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-row">
+              <h2 class="text-2xl md:text-3xl font-bold text-neutral-100 tracking-tight">
+                Desarrollador Full Stack
+              </h2>
+              <span class="job-date font-mono text-neutral-500 text-sm">
+                Nov 2025 — Dic 2025
+              </span>
+            </div>
+            <p class="text-purple-400 text-base font-medium mt-1">
+              CIMA Ocupacional <span class="text-neutral-600 font-normal hidden md:inline-block ml-2">• Sector Salud Digital</span>
+            </p>
+            <p class="text-neutral-600 text-sm font-normal md:hidden mt-0.5">
+              Sector Salud Digital
+            </p>
+          </div>
+          
+          <div class="job-body">
+            <p class="text-neutral-400 text-base md:text-lg leading-relaxed description-text">
+              Desarrollo de soluciones de software aplicadas a la salud digital, integrando inteligencia artificial para automatizar la captura de datos médicos.
+            </p>
+            
+            <ul class="achievement-list">
+              <li>
+                <span class="bullet-dash text-purple-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Desarrollo completo de módulos web orientados al control de historial clínico y registro de antecedentes médicos.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-purple-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Diseño y despliegue de modelos y flujos de <strong>Inteligencia Artificial</strong> especializados en el análisis de información clínica.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-purple-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Diseño de la lógica de negocio para los procesos de registro, consulta y validación estricta de datos médicos.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-purple-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Integración de extremo a extremo (Full Stack) priorizando la usabilidad en entornos de baja infraestructura tecnológica.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-purple-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Participación en el diseño de arquitectura Full Stack para mejorar la escalabilidad y mantenibilidad.</span>
+              </li>
+            </ul>
+
+            <div class="badge-container">
+              <span class="tech-badge">Inteligencia Artificial</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Architecture</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PUESTO 3: ALGORITHMICS -->
+        <article class="job-card">
+          <div class="job-header">
+            <div class="job-title-row">
+              <h2 class="text-2xl md:text-3xl font-bold text-neutral-100 tracking-tight">
+                Instructor de Programación
+              </h2>
+              <span class="job-date font-mono text-neutral-500 text-sm">
+                Mar 2025 - Abr 2026
+              </span>
+            </div>
+            <p class="text-emerald-400 text-base font-medium mt-1">
+              Algorithmics <span class="text-neutral-600 font-normal hidden md:inline-block ml-2">• Educación Tecnológica</span>
+            </p>
+            <p class="text-neutral-600 text-sm font-normal md:hidden mt-0.5">
+              Educación Tecnológica
+            </p>
+          </div>
+          
+          <div class="job-body">
+            <p class="text-neutral-400 text-base md:text-lg leading-relaxed description-text">
+              Mentoría técnica y formación de estudiantes en fundamentos de ingeniería de software, lógica de programación avanzada y desarrollo interactivo.
+            </p>
+            
+            <ul class="achievement-list">
+              <li>
+                <span class="bullet-dash text-emerald-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Enseñanza práctica de lógica estructurada y lenguajes backend utilizando <strong>Python y C#</strong>.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-emerald-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Diseño de cursos de desarrollo de videojuegos con el motor profesional <strong>Unity</strong>.</span>
+              </li>
+              <li>
+                <span class="bullet-dash text-emerald-500">―</span>
+                <span class="text-neutral-300 text-sm md:text-base">Mentoría a estudiantes en el desarrollo de sus proyectos interactivos finales.</span>
+              </li>
+            </ul>
+
+            <div class="badge-container">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">C#</span>
+              <span class="tech-badge">Unity</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      
+      <!-- Footer -->
+      <footer class="main-footer-bottom text-center">
+        <p class="text-xs font-mono text-neutral-700">
+          Miller Arias • Portafolio Profesional 2026
+        </p>
+      </footer>
+
+    </main>
+  </body>
+</html>
+
+<!-- SOLUCIÓN DE ESPACIADO INMUTABLE VIA CSS SEGURO -->
+<style>
+  /* Margen superior de toda la página */
+  .container-layout {
+    margin-top: 3.5rem;
+  }
+
+  /* Espacio forzado bajo el botón de retorno */
+  .back-btn {
+    margin-bottom: 4.5rem !important;
+  }
+
+  /* Espacio forzado bajo la cabecera principal */
+  .main-header {
+    margin-bottom: 6rem !important;
+  }
+
+  /* Separación gigante y clara entre cada experiencia */
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem !important; /* Fuerza la separación real en cualquier navegador */
+  }
+
+  /* Cabecera interna de cada puesto laboral */
+  .job-header {
+    border-bottom: 1px solid #262626;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Fila de Título y Fecha */
+  .job-title-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .job-title-row {
+      flex-direction: row;
+      align-items: baseline;
+    }
+    .container-layout {
+      margin-top: 5rem;
+    }
+  }
+
+  /* Espaciado del párrafo descriptivo */
+  .description-text {
+    margin-bottom: 2rem;
+  }
+
+  /* Lista de logros técnicos espaciada */
+  .achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem !important; /* Espacio vertical real entre cada viñeta */
+    margin-bottom: 2.5rem;
+    padding-left: 0.25rem;
+  }
+
+  .achievement-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .bullet-dash {
+    margin-top: 0.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  /* Contenedor de Badges con espacio asegurado */
+  .badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem !important; /* Separa los badges horizontal Y verticalmente si se quiebran */
+    margin-top: 2rem;
+  }
+
+  .tech-badge {
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #737373;
+    background-color: rgba(23, 23, 23, 0.6);
+    border: 1px solid rgba(38, 38, 38, 0.4);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+  }
+
+  /* Separación del footer */
+  .main-footer-bottom {
+    margin-top: 8rem;
+    padding-top: 2rem;
+    border-top: 1px solid #171717;
+  }
+</style>
