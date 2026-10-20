@@ -37,6 +37,8 @@ Portafolio personal moderno, ultrarrápido y responsivo construido con **Astro**
 ├── public/                      # Assets estáticos servidos en la raíz
 │   ├── favicon.svg              # Monograma SVG
 │   ├── favicon.ico
+│   ├── og-image.png             # Imagen Open Graph 1200×630
+│   ├── robots.txt               # Directivas de rastreo + sitemap
 │   └── CV_Miller_Arias.pdf      # Currículum para descarga directa
 ├── src/
 │   ├── components/
@@ -80,6 +82,14 @@ Todos los comandos se ejecutan desde la raíz del proyecto:
 ## ✅ Calidad y CI
 
 El workflow de GitHub Actions (`.github/workflows/ci.yml`) valida en cada push/PR a `main`: formato (Prettier), tipos (`astro check`) y build. Requiere Node ≥ 22.
+
+## 🔍 SEO y seguridad
+
+- **Metadatos por página:** `canonical`, `description` única, Open Graph y Twitter Card, generados desde `Layout.astro`.
+- **Imagen social:** `public/og-image.png` (1200×630) como `og:image`.
+- **Datos estructurados:** JSON-LD `Person` (schema.org) en todas las páginas.
+- **Sitemap:** `@astrojs/sitemap` genera `sitemap-index.xml` en el build; `robots.txt` lo referencia.
+- **Cabeceras (`vercel.json`):** CSP, HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` y cacheo de assets.
 
 ## ⚠️ Deuda técnica conocida
 

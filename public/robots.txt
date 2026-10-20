@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://miller-arias-dev.vercel.app/sitemap-index.xml
