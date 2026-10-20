@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/experiencia/symphony", "destination": "/experiencia/devup", "permanent": true }
+  ]
+}

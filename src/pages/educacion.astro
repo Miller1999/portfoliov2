@@ -1,17 +1,8 @@
 ---
-import "../styles/global.css";
-import { ClientRouter } from 'astro:transitions';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Educación & Certificaciones | Miller Arias</title>
-    <ClientRouter />
-  </head>
-  <body class="bg-neutral-950 text-neutral-50 min-h-screen p-6 md:p-16 font-sans selection:bg-cyan-500 selection:text-white">
+<Layout title="Educación & Certificaciones | Miller Arias">
     <main class="max-w-3xl mx-auto container-layout">
       
       <!-- Botón de retorno -->
@@ -21,7 +12,7 @@ import { ClientRouter } from 'astro:transitions';
       </a>
 
       <!-- CABECERA DE LA PÁGINA -->
-      <header class="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-neutral-800 shadow-2xl main-header">
+      <header class="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-neutral-800 shadow-2xl main-header" transition:name="card-educacion">
         <div class="flex items-center gap-3 mb-4">
           <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full uppercase tracking-wider">
             Formación Continua
@@ -142,7 +133,7 @@ import { ClientRouter } from 'astro:transitions';
 
         <!-- ACCORDION / TOGGLE MINIMALISTA PARA VER DETALLES SIN SATURAR -->
         <div class="mt-12 text-center">
-          <button id="toggle-certs-btn" class="inline-flex items-center gap-2 text-sm font-mono text-neutral-400 hover:text-cyan-400 border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 px-5 py-2.5 rounded-full transition-all">
+          <button id="toggle-certs-btn" aria-expanded="false" aria-controls="hidden-certs-panel" class="inline-flex items-center gap-2 text-sm font-mono text-neutral-400 hover:text-cyan-400 border border-neutral-800 bg-neutral-900/50 hover:bg-neutral-900 px-5 py-3 rounded-full transition active:scale-[0.99]">
             <span>Mostrar cursos destacados</span>
             <svg id="arrow-icon" class="w-3 h-3 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -171,40 +162,32 @@ import { ClientRouter } from 'astro:transitions';
       
       <!-- Footer -->
       <footer class="main-footer-bottom text-center">
-        <p class="text-xs font-mono text-neutral-700">
+        <p class="text-xs font-mono text-neutral-500">
           Miller Arias • Portafolio Profesional 2026
         </p>
       </footer>
 
     </main>
 
-    <!-- Script nativo e inyectado de Astro para controlar el despliegue sin romper transiciones -->
     <script is:inline>
       document.addEventListener('astro:page-load', () => {
         const btn = document.getElementById('toggle-certs-btn');
         const panel = document.getElementById('hidden-certs-panel');
         const arrow = document.getElementById('arrow-icon');
+        const label = btn ? btn.querySelector('span') : null;
+        if (!btn || !panel || !arrow || !label || btn.dataset.bound) return;
+        btn.dataset.bound = 'true';
 
-        if (btn && panel) {
-          btn.addEventListener('click', () => {
-            const isHidden = panel.classList.contains('hidden-panel');
-            if (isHidden) {
-              panel.classList.remove('hidden-panel');
-              panel.classList.add('open-panel');
-              arrow.classList.add('rotate-180');
-              btn.querySelector('span').textContent = 'Ocultar cursos destacados';
-            } else {
-              panel.classList.remove('open-panel');
-              panel.classList.add('hidden-panel');
-              arrow.classList.remove('rotate-180');
-              btn.querySelector('span').textContent = 'Mostrar cursos destacados';
-            }
-          });
-        }
+        btn.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          panel.classList.toggle('open-panel', !isOpen);
+          arrow.classList.toggle('rotate-180', !isOpen);
+          label.textContent = isOpen ? 'Mostrar cursos destacados' : 'Ocultar cursos destacados';
+        });
       });
     </script>
-  </body>
-</html>
+</Layout>
 
 <style>
   /* Estructura básica inmutable */
@@ -227,7 +210,7 @@ import { ClientRouter } from 'astro:transitions';
   }
 
   .edu-header {
-    border-b: 1px solid #262626;
+    border-bottom: 1px solid #262626;
     padding-bottom: 1rem;
   }
 
@@ -249,24 +232,23 @@ import { ClientRouter } from 'astro:transitions';
     }
   }
 
-  /* Animación limpia para el panel de certificados */
+  /* Animación bidireccional del panel de certificados (retargeteable, dentro del presupuesto 300ms) */
   .hidden-panel {
-    display: none;
+    display: grid;
+    grid-template-rows: 0fr;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transition:
+      grid-template-rows 250ms cubic-bezier(0.23, 1, 0.32, 1),
+      opacity 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .hidden-panel > * {
+    overflow: hidden;
   }
 
   .open-panel {
-    display: block !important;
+    grid-template-rows: 1fr;
     opacity: 1;
-    transform: translateY(0);
-    animation: fadeIn 0.4s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
   }
 
   .main-footer-bottom {

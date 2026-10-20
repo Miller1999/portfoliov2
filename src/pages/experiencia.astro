@@ -1,17 +1,8 @@
 ---
-import "../styles/global.css";
-import { ClientRouter } from 'astro:transitions';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Experiencia Laboral | Miller Arias</title>
-    <ClientRouter />
-  </head>
-  <body class="bg-neutral-950 text-neutral-50 min-h-screen p-6 md:p-16 font-sans selection:bg-cyan-500 selection:text-white">
+<Layout title="Experiencia Laboral | Miller Arias">
     <main class="max-w-3xl mx-auto container-layout">
       
       <!-- Botón de retorno -->
@@ -50,7 +41,7 @@ import { ClientRouter } from 'astro:transitions';
               </span>
             </div>
             <p class="text-cyan-400 text-base font-medium mt-1">
-              Symphony OSS <span class="text-neutral-600 font-normal hidden md:inline-block ml-2">• Plataforma Open Source de Telecomunicaciones</span>
+              Devup Consulting SAS <span class="text-neutral-600 font-normal hidden md:inline-block ml-2">• Plataforma Open Source de Telecomunicaciones</span>
             </p>
             <p class="text-neutral-600 text-sm font-normal md:hidden mt-0.5">
               Plataforma Open Source de Telecomunicaciones
@@ -209,14 +200,13 @@ import { ClientRouter } from 'astro:transitions';
       
       <!-- Footer -->
       <footer class="main-footer-bottom text-center">
-        <p class="text-xs font-mono text-neutral-700">
+        <p class="text-xs font-mono text-neutral-500">
           Miller Arias • Portafolio Profesional 2026
         </p>
       </footer>
 
     </main>
-  </body>
-</html>
+</Layout>
 
 <!-- SOLUCIÓN DE ESPACIADO INMUTABLE VIA CSS SEGURO -->
 <style>

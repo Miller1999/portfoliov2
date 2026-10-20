@@ -1,17 +1,8 @@
 ---
-import "../../styles/global.css";
-import { ClientRouter } from 'astro:transitions';
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Edge AI Tutor Sandbox | Miller Arias</title>
-    <ClientRouter />
-  </head>
-  <body class="bg-neutral-950 text-neutral-50 min-h-screen p-6 md:p-16 font-sans selection:bg-cyan-500 selection:text-white">
+<Layout title="Edge AI Tutor Sandbox | Miller Arias">
     
     <!-- Contenedor Principal con transiciones de página -->
     <main class="max-w-3xl mx-auto project-layout" transition:name="card-project-edge">
@@ -49,47 +40,47 @@ import { ClientRouter } from 'astro:transitions';
         <div class="flow-diagram bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 space-y-4 font-mono text-xs">
           
           <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">1</div>
+            <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">1</div>
             <div>
               <p class="text-neutral-200 font-bold">Frontend (index.html)</p>
               <p class="text-neutral-500">Envío estructurado via FormData (Evita Prompt Injection).</p>
             </div>
           </div>
 
-          <div class="text-center text-neutral-700 text-lg leading-none">▼</div>
+          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
 
           <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-yellow-500/10 text-yellow-400 flex items-center justify-center font-bold">2</div>
+            <div class="w-8 h-8 rounded-full bg-yellow-500/10 text-yellow-400 flex items-center justify-center font-bold shrink-0">2</div>
             <div>
               <p class="text-neutral-200 font-bold">FastAPI Core Engine (main.py)</p>
               <p class="text-neutral-500">Recibe binario .py y persiste transacciones en SQLite (Gating).</p>
             </div>
           </div>
 
-          <div class="text-center text-neutral-700 text-lg leading-none">▼</div>
+          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
 
           <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold">3</div>
+            <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold shrink-0">3</div>
             <div>
               <p class="text-neutral-200 font-bold">Docker Sandbox Hermético (Orquestador)</p>
               <p class="text-neutral-500">Ejecución aislada (3s máx) contra Pytest oculto. Extrae JSON.</p>
             </div>
           </div>
 
-          <div class="text-center text-neutral-700 text-lg leading-none">▼</div>
+          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
 
           <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold">4</div>
+            <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">4</div>
             <div>
               <p class="text-neutral-200 font-bold">Motor RAG Local (ChromaDB + Ollama)</p>
               <p class="text-neutral-500">Cruza el error con apuntes del docente. Inferencia con Qwen 2.5 Coder 3B.</p>
             </div>
           </div>
 
-          <div class="text-center text-neutral-700 text-lg leading-none">▼</div>
+          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
 
           <div class="flex items-center gap-4 p-3 bg-neutral-950 border border-neutral-900 rounded-xl text-emerald-400">
-            <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center font-bold">✓</div>
+            <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center font-bold shrink-0">✓</div>
             <div>
               <p class="font-bold">Guardrail de Salida & Feedback Socrático</p>
               <p class="text-neutral-500">Censura de código directo mediante backend y entrega de pistas lógicas.</p>
@@ -108,8 +99,8 @@ import { ClientRouter } from 'astro:transitions';
             <span class="text-sm font-mono text-neutral-300">/evaluar</span>
             <span class="text-xs font-mono text-neutral-500 ml-auto">multipart/form-data</span>
           </div>
-          <div class="p-6">
-            <table class="w-full text-left font-mono text-xs text-neutral-400">
+          <div class="p-6 overflow-x-auto">
+            <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
               <thead>
                 <tr class="border-b border-neutral-800 text-neutral-500">
                   <th class="pb-2 font-normal">Parámetro</th>
@@ -191,14 +182,13 @@ import { ClientRouter } from 'astro:transitions';
 
       <!-- FOOTER DE LA PÁGINA -->
       <footer class="project-footer text-center">
-        <p class="text-xs font-mono text-neutral-700">
+        <p class="text-xs font-mono text-neutral-500">
           Miller Arias • Detalle Técnico del Proyecto • 2026
         </p>
       </footer>
 
     </main>
-  </body>
-</html>
+</Layout>
 
 <style>
   /* Clases de espaciado inmutables e inmunes a colapsos */
