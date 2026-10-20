@@ -1,0 +1,39 @@
+---
+interface Props {
+  href?: string;
+  transitionName?: string;
+  download?: boolean;
+  external?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  transitionName,
+  download = false,
+  external = false,
+  class: className = "",
+} = Astro.props;
+
+const base = "bg-neutral-900 rounded-3xl p-6 border border-neutral-800";
+const interactive =
+  "group block no-underline text-current transition active:scale-[0.99]";
+const combined = `${base} ${href ? interactive : ""} ${className}`.trim();
+---
+
+{href ? (
+  <a
+    href={href}
+    transition:name={transitionName}
+    download={download || undefined}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
+    class={combined}
+  >
+    <slot />
+  </a>
+) : (
+  <article class={combined}>
+    <slot />
+  </article>
+)}

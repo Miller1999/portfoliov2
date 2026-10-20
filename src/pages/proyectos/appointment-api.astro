@@ -4,12 +4,12 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="Appointment Management API | Miller Arias">
   <main
-    class="max-w-3xl mx-auto project-layout"
+    class="max-w-3xl mx-auto mt-16 md:mt-24"
     transition:name="card-project-appointment"
   >
     <a
       href="/"
-      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-purple-400 transition-colors group"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-purple-400 transition-colors group"
     >
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
@@ -17,7 +17,7 @@ import Layout from "../../layouts/Layout.astro";
       Volver al bento
     </a>
 
-    <header class="project-header">
+    <header class="mb-12 mt-11">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full uppercase tracking-wider">
           Full Stack Enterprise
@@ -40,7 +40,7 @@ import Layout from "../../layouts/Layout.astro";
           href="https://github.com/Miller1999/Bookly"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition-all"
+          class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition active:scale-[0.99]"
         >
           <span>Ver Repositorio en GitHub</span>
           <span class="text-neutral-600">↗</span>
@@ -50,7 +50,7 @@ import Layout from "../../layouts/Layout.astro";
 
     <hr class="border-neutral-900 my-12" />
 
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
         Topología de la Arquitectura
       </h2>
@@ -103,7 +103,7 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
         Matriz de Endpoints (REST API)
       </h2>
@@ -117,7 +117,7 @@ import Layout from "../../layouts/Layout.astro";
             Swagger UI Compliant
           </span>
         </div>
-        <div class="p-6 overflow-x-auto">
+        <div class="p-6 overflow-x-auto overscroll-x-contain">
           <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
             <thead>
               <tr class="border-b border-neutral-800 text-neutral-500">
@@ -168,7 +168,7 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
         Contrato de Datos (Esquema JSON)
       </h2>
@@ -216,7 +216,7 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
         Estrategia de Desarrollo & Control de Calidad
       </h2>
@@ -249,38 +249,10 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <footer class="project-footer text-center">
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
       <p class="text-xs font-mono text-neutral-500">
         Miller Arias • Detalle Técnico del Proyecto • 2026
       </p>
     </footer>
   </main>
 </Layout>
-
-<style>
-  /* Clases de espaciado inmutables e inmunes a colapsos */
-  .project-layout {
-    margin-top: 4rem;
-  }
-  .back-btn {
-    margin-bottom: 3.5rem !important;
-  }
-  .project-header {
-    margin-bottom: 3rem !important;
-  }
-  .section-block {
-    margin-bottom: 5.5rem !important;
-  }
-  .project-footer {
-    margin-top: 6rem;
-    padding-top: 2rem;
-    border-top: 1px solid #171717;
-  }
-
-  /* Control responsivo para el viewport */
-  @media (min-width: 768px) {
-    .project-layout {
-      margin-top: 6rem;
-    }
-  }
-</style>

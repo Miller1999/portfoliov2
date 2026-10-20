@@ -5,13 +5,13 @@ import Layout from "../../layouts/Layout.astro";
 <Layout title="Edge AI Tutor Sandbox | Miller Arias">
   <!-- Contenedor Principal con transiciones de página -->
   <main
-    class="max-w-3xl mx-auto project-layout"
+    class="max-w-3xl mx-auto mt-16 md:mt-24"
     transition:name="card-project-edge"
   >
     <!-- Botón de retorno -->
     <a
       href="/"
-      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
     >
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
@@ -20,7 +20,7 @@ import Layout from "../../layouts/Layout.astro";
     </a>
 
     <!-- CABECERA DE PROYECTO -->
-    <header class="project-header">
+    <header class="mb-12 mt-11">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
           Tesis de Investigación
@@ -42,7 +42,7 @@ import Layout from "../../layouts/Layout.astro";
     <hr class="border-neutral-900 my-12" />
 
     <!-- DIAGRAMA DE FLUJO END-TO-END (HTML Puro & CSS) -->
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
         Flujo de Datos End-to-End
       </h2>
@@ -127,7 +127,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- ESPECIFICACIÓN TÉCNICA DE LA API -->
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
         Especificación del Endpoint Núcleo
       </h2>
@@ -141,7 +141,7 @@ import Layout from "../../layouts/Layout.astro";
             multipart/form-data
           </span>
         </div>
-        <div class="p-6 overflow-x-auto">
+        <div class="p-6 overflow-x-auto overscroll-x-contain">
           <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
             <thead>
               <tr class="border-b border-neutral-800 text-neutral-500">
@@ -181,7 +181,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- MODELO DE DATOS & ESTRATEGIA DE GATING -->
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
         Persistencia Estricta (Estrategia Anti Rote-Learning)
       </h2>
@@ -191,7 +191,7 @@ import Layout from "../../layouts/Layout.astro";
         <strong>SQLite</strong> almacena el historial transaccional de
         reintentos de forma atómica.
       </p>
-      <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800 font-mono text-xs text-cyan-400 overflow-x-auto">
+      <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800 font-mono text-xs text-cyan-400 overflow-x-auto overscroll-x-contain">
         <pre><code><span class="text-neutral-500">-- Estructura de control incremental de intentos</span>
 <span class="text-purple-400">CREATE TABLE</span> IF NOT EXISTS progreso (
     id <span class="text-orange-400">INTEGER</span> PRIMARY KEY AUTOINCREMENT,
@@ -204,7 +204,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- HALLAZGOS CIENTÍFICOS Y LECCIONES APRENDIDAS -->
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
         Hallazgos de Ingeniería & Mitigación
       </h2>
@@ -259,38 +259,10 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- FOOTER DE LA PÁGINA -->
-    <footer class="project-footer text-center">
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
       <p class="text-xs font-mono text-neutral-500">
         Miller Arias • Detalle Técnico del Proyecto • 2026
       </p>
     </footer>
   </main>
 </Layout>
-
-<style>
-  /* Clases de espaciado inmutables e inmunes a colapsos */
-  .project-layout {
-    margin-top: 4rem;
-  }
-  .back-btn {
-    margin-bottom: 3.5rem !important;
-  }
-  .project-header {
-    margin-bottom: 3rem !important;
-  }
-  .section-block {
-    margin-bottom: 5.5rem !important;
-  }
-  .project-footer {
-    margin-top: 6rem;
-    padding-top: 2rem;
-    border-top: 1px solid #171717;
-  }
-
-  /* Control responsivo para tablas y diagramas */
-  @media (min-width: 768px) {
-    .project-layout {
-      margin-top: 6rem;
-    }
-  }
-</style>

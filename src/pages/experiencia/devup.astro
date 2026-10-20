@@ -4,11 +4,11 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="Devup Consulting SAS | Miller Arias">
   <!-- Contenedor Principal con transiciones de página -->
-  <main class="max-w-3xl mx-auto project-layout" transition:name="card-status">
+  <main class="max-w-3xl mx-auto mt-16 md:mt-24" transition:name="card-status">
     <!-- Botón de retorno -->
     <a
       href="/"
-      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
     >
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
@@ -17,7 +17,7 @@ import Layout from "../../layouts/Layout.astro";
     </a>
 
     <!-- CABECERA DE EXPERIENCIA -->
-    <header class="project-header">
+    <header class="mb-12 mt-11">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
           Experiencia Actual
@@ -44,7 +44,7 @@ import Layout from "../../layouts/Layout.astro";
     <hr class="border-neutral-900 my-12" />
 
     <!-- IMPACTO Y LOGROS TÉCNICOS -->
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
         Iniciativas Core: Fast Track & Usabilidad
       </h2>
@@ -138,7 +138,7 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- STACK TECNOLÓGICO -->
-    <section class="section-block">
+    <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
         Entorno Técnico & Herramientas
       </h2>
@@ -171,38 +171,10 @@ import Layout from "../../layouts/Layout.astro";
     </section>
 
     <!-- FOOTER DE LA PÁGINA -->
-    <footer class="project-footer text-center">
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
       <p class="text-xs font-mono text-neutral-500">
         Miller Arias • Experiencia Profesional • Devup Consulting SAS
       </p>
     </footer>
   </main>
 </Layout>
-
-<style>
-  /* Clases de espaciado inmutables e inmunes a colapsos */
-  .project-layout {
-    margin-top: 4rem;
-  }
-  .back-btn {
-    margin-bottom: 3.5rem !important;
-  }
-  .project-header {
-    margin-bottom: 3rem !important;
-  }
-  .section-block {
-    margin-bottom: 5.5rem !important;
-  }
-  .project-footer {
-    margin-top: 6rem;
-    padding-top: 2rem;
-    border-top: 1px solid #171717;
-  }
-
-  /* Control responsivo */
-  @media (min-width: 768px) {
-    .project-layout {
-      margin-top: 6rem;
-    }
-  }
-</style>

@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { profile } from "../data/profile";
 ---
 
 <Layout title="Contacto | Miller Arias">
-  <main class="max-w-xl mx-auto contact-layout" transition:name="card-contacto">
+  <main class="max-w-xl mx-auto mt-16 md:mt-32" transition:name="card-contacto">
     <a
       href="/"
-      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
     >
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
@@ -14,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
       Volver al bento
     </a>
 
-    <header class="contact-header mb-12">
+    <header class="mb-12 mt-14">
       <p class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">
         Hablemos de ingeniería
       </p>
@@ -33,12 +34,13 @@ import Layout from "../layouts/Layout.astro";
       </h2>
       <button
         id="copy-email-btn"
+        data-email={profile.email}
         class="w-full bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-left transition active:scale-[0.99] group cursor-pointer"
         title="Click para copiar correo"
       >
-        <div>
-          <span class="text-lg md:text-xl font-semibold text-neutral-200 block group-hover:text-cyan-400 transition-colors">
-            millerjavierarias@gmail.com
+        <div class="min-w-0">
+          <span class="text-lg md:text-xl font-semibold text-neutral-200 block group-hover:text-cyan-400 transition-colors overflow-wrap-anywhere">
+            {profile.email}
           </span>
           <span
             id="copy-status"
@@ -61,7 +63,7 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <a
-          href="https://www.linkedin.com/in/miller-javier-arias-quintero/?locale=en-US"
+          href={profile.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
@@ -80,7 +82,7 @@ import Layout from "../layouts/Layout.astro";
         </a>
 
         <a
-          href="https://wa.me/573138220202?text=Hola%20Miller,%20vi%20tu%20portafolio%20y%20me%20gustaría%20que%20habláramos."
+          href={`https://wa.me/${profile.phone}?text=${encodeURIComponent("Hola Miller, vi tu portafolio y me gustaría que habláramos.")}`}
           target="_blank"
           rel="noopener noreferrer"
           class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
@@ -99,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
         </a>
 
         <a
-          href="https://github.com/Miller1999"
+          href={profile.github}
           target="_blank"
           rel="noopener noreferrer"
           class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99] sm:col-span-2"
@@ -119,7 +121,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
-    <footer class="contact-footer mt-16 text-center">
+    <footer class="mt-16 text-center">
       <p class="text-xs font-mono text-neutral-500">
         <span aria-hidden="true">📍</span> Bogotá, Colombia • Zona Horaria UTC-5
       </p>
@@ -137,8 +139,9 @@ import Layout from "../layouts/Layout.astro";
       const defaultStatus = statusText.textContent;
 
       copyBtn.addEventListener("click", async () => {
+        const email = copyBtn.dataset.email || "";
         try {
-          await navigator.clipboard.writeText("millerjavierarias@gmail.com");
+          await navigator.clipboard.writeText(email);
           statusText.textContent = "¡Copiado exitosamente al portapapeles! 🎉";
           statusText.classList.remove("text-neutral-500");
           statusText.classList.add("text-cyan-400");
@@ -157,18 +160,3 @@ import Layout from "../layouts/Layout.astro";
     });
   </script>
 </Layout>
-
-<style>
-  /* Clases de control inmutables */
-  .contact-layout {
-    margin-top: 4rem;
-  }
-  .back-btn {
-    margin-bottom: 3.5rem !important;
-  }
-  @media (min-width: 768px) {
-    .contact-layout {
-      margin-top: 8rem;
-    }
-  }
-</style>

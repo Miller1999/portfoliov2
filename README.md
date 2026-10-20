@@ -39,6 +39,13 @@ Portafolio personal moderno, ultrarrápido y responsivo construido con **Astro**
 │   ├── favicon.ico
 │   └── CV_Miller_Arias.pdf      # Currículum para descarga directa
 ├── src/
+│   ├── components/
+│   │   └── BentoCard.astro       # Tarjeta reutilizable (link o article)
+│   ├── data/                     # Fuente única de verdad (tipada)
+│   │   ├── profile.ts
+│   │   ├── experience.ts
+│   │   ├── education.ts
+│   │   └── projects.ts
 │   ├── layouts/
 │   │   └── Layout.astro         # Layout único (head, ClientRouter, body)
 │   ├── pages/                   # Enrutamiento basado en archivos
