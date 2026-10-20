@@ -10,7 +10,7 @@ export interface EducationItem {
 export const education: EducationItem[] = [
   {
     title: "Ingeniería Electrónica",
-    date: "2016 — 2024",
+    date: "2019 — 2027",
     institution: "Universidad Nacional de Colombia",
     detail: "Énfasis en Robótica y Mecatrónica",
     accent: "cyan",
