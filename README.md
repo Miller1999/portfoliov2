@@ -22,7 +22,7 @@ Portafolio personal moderno, ultrarrápido y responsivo construido con **Astro**
 
 | Tecnología         | Rol en el proyecto                                   |
 | :----------------- | :--------------------------------------------------- |
-| **Astro 6**        | Framework principal, enrutamiento estático y layout. |
+| **Astro 7**        | Framework principal, enrutamiento estático y layout. |
 | **Tailwind CSS 4** | Sistema de utilidades (config CSS-first, `@theme`).  |
 | **TypeScript**     | Tipado estricto (`astro/tsconfigs/strict`).          |
 | **Vanilla JS**     | Interactividad ligera (copiar correo, acordeón).     |
@@ -81,7 +81,7 @@ Todos los comandos se ejecutan desde la raíz del proyecto:
 
 ## ✅ Calidad y CI
 
-El workflow de GitHub Actions (`.github/workflows/ci.yml`) valida en cada push/PR a `main`: formato (Prettier), tipos (`astro check`) y build. Requiere Node ≥ 22.
+El workflow de GitHub Actions (`.github/workflows/ci.yml`) valida en cada push/PR a `main`: formato (Prettier), tipos (`astro check`), auditoría de dependencias y build. Requiere Node ≥ 22.22.
 
 ## 🔍 SEO y seguridad
 
@@ -93,4 +93,4 @@ El workflow de GitHub Actions (`.github/workflows/ci.yml`) valida en cada push/P
 
 ## ⚠️ Deuda técnica conocida
 
-- **Dependencias:** hay advisories conocidas en la cadena de Astro 6 que solo se cierran con el **upgrade mayor a Astro ≥ 7.2.8** (ninguna explotable en un sitio estático sin input de usuario). El paso `npm audit` del CI se ejecuta como informativo hasta entonces.
+- **Sin vulnerabilidades conocidas:** `npm audit` reporta 0 vulnerabilidades. El CI falla ante cualquier advisory de severidad `high` o superior (`npm audit --audit-level=high`).
