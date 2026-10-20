@@ -1,32 +1,32 @@
 ---
 import "../styles/global.css";
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
-	title: string;
-	description?: string;
-	bodyClass?: string;
+  title: string;
+  description?: string;
+  bodyClass?: string;
 }
 
 const {
-	title,
-	description,
-	bodyClass = "bg-neutral-950 text-neutral-50 min-h-screen p-6 md:p-16 font-sans selection:bg-cyan-500 selection:text-white",
+  title,
+  description,
+  bodyClass = "bg-neutral-950 text-neutral-50 min-h-screen p-6 md:p-16 font-sans selection:bg-cyan-500 selection:text-white",
 } = Astro.props;
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		{description && <meta name="description" content={description} />}
-		<ClientRouter />
-	</head>
-	<body class={bodyClass}>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <ClientRouter />
+  </head>
+  <body class={bodyClass}>
+    <slot />
+  </body>
 </html>

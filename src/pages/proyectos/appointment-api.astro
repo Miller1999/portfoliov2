@@ -3,180 +3,258 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Appointment Management API | Miller Arias">
-    
-    <main class="max-w-3xl mx-auto project-layout" transition:name="card-project-appointment">
-      
-      <a href="/" class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-purple-400 transition-colors group">
-        <span class="inline-block transform group-hover:-translate-x-1 transition-transform">←</span> 
-        Volver al bento
-      </a>
+  <main
+    class="max-w-3xl mx-auto project-layout"
+    transition:name="card-project-appointment"
+  >
+    <a
+      href="/"
+      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-purple-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Volver al bento
+    </a>
 
-      <header class="project-header">
-        <div class="flex flex-wrap items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full uppercase tracking-wider">
-            Full Stack Enterprise
+    <header class="project-header">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Full Stack Enterprise
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          Decoupled Architecture
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+        Appointment Management API
+      </h1>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Sistema robusto de agendamiento y gestión de citas clínicas. Diseñado
+        mediante un backend corporativo con validación estricta de esquemas
+        relacionales y un cliente SPA modular de alto rendimiento.
+      </p>
+
+      <div class="mt-6">
+        <a
+          href="https://github.com/Miller1999/Bookly"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition-all"
+        >
+          <span>Ver Repositorio en GitHub</span>
+          <span class="text-neutral-600">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <hr class="border-neutral-900 my-12" />
+
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Topología de la Arquitectura
+      </h2>
+
+      <div class="bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 font-mono text-xs relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center relative z-10">
+          <div class="p-4 bg-neutral-900/60 rounded-xl border border-neutral-800/60 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-cyan-400 uppercase tracking-widest block mb-1">
+                Presentation Layer
+              </span>
+              <p class="text-neutral-200 font-bold text-sm">React 18 + Vite</p>
+            </div>
+            <p class="text-neutral-500 text-[11px] mt-3">
+              SPA Tipada con TypeScript, Axios para consumo HTTP y Tailwind CSS.
+            </p>
+          </div>
+
+          <div class="p-4 bg-neutral-900/60 rounded-xl border border-purple-500/20 flex flex-col justify-between relative">
+            <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 px-2 py-0.5 bg-purple-500/20 text-purple-400 text-[9px] uppercase rounded border border-purple-500/30">
+              RESTful
+            </div>
+            <div>
+              <span class="text-[10px] text-purple-400 uppercase tracking-widest block mb-1">
+                Core Logic
+              </span>
+              <p class="text-neutral-200 font-bold text-sm">ASP.NET Core 8</p>
+            </div>
+            <p class="text-neutral-500 text-[11px] mt-3">
+              Validación a nivel de modelo, inyección de dependencias y ruteo
+              asíncrono.
+            </p>
+          </div>
+
+          <div class="p-4 bg-neutral-900/60 rounded-xl border border-neutral-800/60 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] text-emerald-400 uppercase tracking-widest block mb-1">
+                Data Storage
+              </span>
+              <p class="text-neutral-200 font-bold text-sm">
+                PostgreSQL + EF Core
+              </p>
+            </div>
+            <p class="text-neutral-500 text-[11px] mt-3">
+              Mapeo Objeto-Relacional (ORM) automatizado mediante migraciones
+              estrictas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
+        Matriz de Endpoints (REST API)
+      </h2>
+      <div class="bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
+        <div class="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center justify-between">
+          <span class="text-xs font-mono text-neutral-400">
+            Controlador base:{" "}
+            <code class="text-purple-400">/api/appointments</code>
           </span>
-          <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
-            Decoupled Architecture
+          <span class="text-[10px] bg-neutral-900 px-2 py-0.5 border border-neutral-800 rounded text-neutral-500 font-mono">
+            Swagger UI Compliant
           </span>
         </div>
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
-          Appointment Management API
-        </h1>
-        <p class="text-neutral-400 text-lg leading-relaxed">
-          Sistema robusto de agendamiento y gestión de citas clínicas. Diseñado mediante un backend corporativo con validación estricta de esquemas relacionales y un cliente SPA modular de alto rendimiento.
-        </p>
-
-        <div class="mt-6">
-          <a href="https://github.com/Miller1999/Bookly" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition-all">
-            <span>Ver Repositorio en GitHub</span>
-            <span class="text-neutral-600">↗</span>
-          </a>
+        <div class="p-6 overflow-x-auto">
+          <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
+            <thead>
+              <tr class="border-b border-neutral-800 text-neutral-500">
+                <th class="pb-2 font-normal w-24">Método</th>
+                <th class="pb-2 font-normal">Ruta del Endpoint</th>
+                <th class="pb-2 font-normal">Operación / Impacto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-neutral-800/50">
+                <td class="py-3 font-bold text-emerald-400">GET</td>
+                <td class="py-3 text-neutral-200">/api/appointments</td>
+                <td class="py-3 text-neutral-500">
+                  Listado completo con paginación integrada.
+                </td>
+              </tr>
+              <tr class="border-b border-neutral-800/50">
+                <td class="py-3 font-bold text-emerald-400">GET</td>
+                <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
+                <td class="py-3 text-neutral-500">
+                  Búsqueda atómica por ID único en base relacional.
+                </td>
+              </tr>
+              <tr class="border-b border-neutral-800/50">
+                <td class="py-3 font-bold text-blue-400">POST</td>
+                <td class="py-3 text-neutral-200">/api/appointments</td>
+                <td class="py-3 text-neutral-500">
+                  Creación e inserción con validación asíncrona.
+                </td>
+              </tr>
+              <tr class="border-b border-neutral-800/50">
+                <td class="py-3 font-bold text-amber-400">PUT</td>
+                <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
+                <td class="py-3 text-neutral-500">
+                  Mutación completa de datos de la cita y estados.
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 font-bold text-red-400">DELETE</td>
+                <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
+                <td class="py-3 text-neutral-500">
+                  Remoción física del registro mediante Entity Framework.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <hr class="border-neutral-900 my-12" />
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
+        Contrato de Datos (Esquema JSON)
+      </h2>
+      <p class="text-neutral-400 text-sm mb-4 leading-relaxed">
+        Garantía de integridad de ciclo de vida para los estados transaccionales
+        permitidos (
+        <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">
+          pendiente
+        </code>
+        ,{" "}
+        <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">
+          confirmada
+        </code>
+        ,{" "}
+        <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">
+          cancelada
+        </code>
+        ).
+      </p>
 
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Topología de la Arquitectura</h2>
-        
-        <div class="bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 font-mono text-xs relative overflow-hidden">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center relative z-10">
-            
-            <div class="p-4 bg-neutral-900/60 rounded-xl border border-neutral-800/60 flex flex-col justify-between">
-              <div>
-                <span class="text-[10px] text-cyan-400 uppercase tracking-widest block mb-1">Presentation Layer</span>
-                <p class="text-neutral-200 font-bold text-sm">React 18 + Vite</p>
-              </div>
-              <p class="text-neutral-500 text-[11px] mt-3">SPA Tipada con TypeScript, Axios para consumo HTTP y Tailwind CSS.</p>
-            </div>
-
-            <div class="p-4 bg-neutral-900/60 rounded-xl border border-purple-500/20 flex flex-col justify-between relative">
-              <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 px-2 py-0.5 bg-purple-500/20 text-purple-400 text-[9px] uppercase rounded border border-purple-500/30">RESTful</div>
-              <div>
-                <span class="text-[10px] text-purple-400 uppercase tracking-widest block mb-1">Core Logic</span>
-                <p class="text-neutral-200 font-bold text-sm">ASP.NET Core 8</p>
-              </div>
-              <p class="text-neutral-500 text-[11px] mt-3">Validación a nivel de modelo, inyección de dependencias y ruteo asíncrono.</p>
-            </div>
-
-            <div class="p-4 bg-neutral-900/60 rounded-xl border border-neutral-800/60 flex flex-col justify-between">
-              <div>
-                <span class="text-[10px] text-emerald-400 uppercase tracking-widest block mb-1">Data Storage</span>
-                <p class="text-neutral-200 font-bold text-sm">PostgreSQL + EF Core</p>
-              </div>
-              <p class="text-neutral-500 text-[11px] mt-3">Mapeo Objeto-Relacional (ORM) automatizado mediante migraciones estrictas.</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">Matriz de Endpoints (REST API)</h2>
-        <div class="bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
-          <div class="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center justify-between">
-            <span class="text-xs font-mono text-neutral-400">Controlador base: <code class="text-purple-400">/api/appointments</code></span>
-            <span class="text-[10px] bg-neutral-900 px-2 py-0.5 border border-neutral-800 rounded text-neutral-500 font-mono">Swagger UI Compliant</span>
-          </div>
-          <div class="p-6 overflow-x-auto">
-            <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
-              <thead>
-                <tr class="border-b border-neutral-800 text-neutral-500">
-                  <th class="pb-2 font-normal w-24">Método</th>
-                  <th class="pb-2 font-normal">Ruta del Endpoint</th>
-                  <th class="pb-2 font-normal">Operación / Impacto</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-neutral-800/50">
-                  <td class="py-3 font-bold text-emerald-400">GET</td>
-                  <td class="py-3 text-neutral-200">/api/appointments</td>
-                  <td class="py-3 text-neutral-500">Listado completo con paginación integrada.</td>
-                </tr>
-                <tr class="border-b border-neutral-800/50">
-                  <td class="py-3 font-bold text-emerald-400">GET</td>
-                  <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
-                  <td class="py-3 text-neutral-500">Búsqueda atómica por ID único en base relacional.</td>
-                </tr>
-                <tr class="border-b border-neutral-800/50">
-                  <td class="py-3 font-bold text-blue-400">POST</td>
-                  <td class="py-3 text-neutral-200">/api/appointments</td>
-                  <td class="py-3 text-neutral-500">Creación e inserción con validación asíncrona.</td>
-                </tr>
-                <tr class="border-b border-neutral-800/50">
-                  <td class="py-3 font-bold text-amber-400">PUT</td>
-                  <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
-                  <td class="py-3 text-neutral-500">Mutación completa de datos de la cita y estados.</td>
-                </tr>
-                <tr>
-                  <td class="py-3 font-bold text-red-400">DELETE</td>
-                  <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
-                  <td class="py-3 text-neutral-500">Remoción física del registro mediante Entity Framework.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block">
-  <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">Contrato de Datos (Esquema JSON)</h2>
-  <p class="text-neutral-400 text-sm mb-4 leading-relaxed">
-    Garantía de integridad de ciclo de vida para los estados transaccionales permitidos (<code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">pendiente</code>, <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">confirmada</code>, <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">cancelada</code>).
-  </p>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
-    <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800">
-      <span class="text-[10px] text-neutral-500 uppercase block mb-3">// HTTP POST Body</span>
-      <pre class="text-neutral-300"><code>{"{"}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
+        <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800">
+          <span class="text-[10px] text-neutral-500 uppercase block mb-3">
+            // HTTP POST Body
+          </span>
+          <pre class="text-neutral-300"><code>{"{"}
   <span class="text-purple-400">"clientName"</span>: <span class="text-cyan-400">"John Doe"</span>,
   <span class="text-purple-400">"date"</span>: <span class="text-cyan-400">"2024-12-01T10:00:00"</span>,
   <span class="text-purple-400">"status"</span>: <span class="text-cyan-400">"pendiente"</span>
 {"}"}</code></pre>
-    </div>
+        </div>
 
-    <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800">
-      <span class="text-[10px] text-neutral-500 uppercase block mb-3">// HTTP 201 Created Response</span>
-      <pre class="text-neutral-300"><code>{"{"}
+        <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800">
+          <span class="text-[10px] text-neutral-500 uppercase block mb-3">
+            // HTTP 201 Created Response
+          </span>
+          <pre class="text-neutral-300"><code>{"{"}
   <span class="text-purple-400">"id"</span>: <span class="text-orange-400">1</span>,
   <span class="text-purple-400">"clientName"</span>: <span class="text-cyan-400">"John Doe"</span>,
   <span class="text-purple-400">"date"</span>: <span class="text-cyan-400">"2024-12-01T10:00:00"</span>,
   <span class="text-purple-400">"status"</span>: <span class="text-cyan-400">"pendiente"</span>,
   <span class="text-purple-400">"createdAt"</span>: <span class="text-neutral-500">"2024-10-03..."</span>
 {"}"}</code></pre>
-    </div>
-  </div>
-</section>
-
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Estrategia de Desarrollo & Control de Calidad</h2>
-        <div class="space-y-6">
-          
-          <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
-            <h3 class="text-sm font-mono text-purple-400 uppercase tracking-wider mb-2">Validación Dual (Client & Server Side)</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed">
-              La consistencia de los datos está blindada perimetralmente. El frontend intercepta cadenas vacías o fechas inválidas antes de consumir red, mientras que el backend ejecuta filtros estrictos mediante <strong>Data Annotations</strong> nativas de C#, evitando corrupciones o payloads maliciosos directo en la base PostgreSQL.
-            </p>
-          </div>
-
-          <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
-            <h3 class="text-sm font-mono text-emerald-400 uppercase tracking-wider mb-2">Eficiencia en Volumen: Paginación Nativa</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed">
-              En lugar de saturar la memoria RAM del cliente transmitiendo cientos de registros simultáneos, el controlador expone parámetros numéricos de paginación que segmentan la respuesta a nivel de base de datos gracias a las directivas de filtrado diferido en <strong>LINQ / Entity Framework Core</strong>.
-            </p>
-          </div>
-
         </div>
-      </section>
+      </div>
+    </section>
 
-      <footer class="project-footer text-center">
-        <p class="text-xs font-mono text-neutral-500">
-          Miller Arias • Detalle Técnico del Proyecto • 2026
-        </p>
-      </footer>
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Estrategia de Desarrollo & Control de Calidad
+      </h2>
+      <div class="space-y-6">
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-mono text-purple-400 uppercase tracking-wider mb-2">
+            Validación Dual (Client & Server Side)
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            La consistencia de los datos está blindada perimetralmente. El
+            frontend intercepta cadenas vacías o fechas inválidas antes de
+            consumir red, mientras que el backend ejecuta filtros estrictos
+            mediante <strong>Data Annotations</strong> nativas de C#, evitando
+            corrupciones o payloads maliciosos directo en la base PostgreSQL.
+          </p>
+        </div>
 
-    </main>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-mono text-emerald-400 uppercase tracking-wider mb-2">
+            Eficiencia en Volumen: Paginación Nativa
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            En lugar de saturar la memoria RAM del cliente transmitiendo cientos
+            de registros simultáneos, el controlador expone parámetros numéricos
+            de paginación que segmentan la respuesta a nivel de base de datos
+            gracias a las directivas de filtrado diferido en{" "}
+            <strong>LINQ / Entity Framework Core</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="project-footer text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Detalle Técnico del Proyecto • 2026
+      </p>
+    </footer>
+  </main>
 </Layout>
 
 <style>

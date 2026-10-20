@@ -3,141 +3,196 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Edge AI Tutor Sandbox | Miller Arias">
-    
-    <!-- Contenedor Principal con transiciones de página -->
-    <main class="max-w-3xl mx-auto project-layout" transition:name="card-project-edge">
-      
-      <!-- Botón de retorno -->
-      <a href="/" class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group">
-        <span class="inline-block transform group-hover:-translate-x-1 transition-transform">←</span> 
-        Volver al bento
-      </a>
+  <!-- Contenedor Principal con transiciones de página -->
+  <main
+    class="max-w-3xl mx-auto project-layout"
+    transition:name="card-project-edge"
+  >
+    <!-- Botón de retorno -->
+    <a
+      href="/"
+      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Volver al bento
+    </a>
 
-      <!-- CABECERA DE PROYECTO -->
-      <header class="project-header">
-        <div class="flex flex-wrap items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
-            Tesis de Investigación
+    <!-- CABECERA DE PROYECTO -->
+    <header class="project-header">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Tesis de Investigación
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          100% Offline / Local CPU
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+        Edge AI Tutor Sandbox
+      </h1>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Arquitectura híbrida de evaluación aislada de código, RAG local e IA
+        cuantizada orientada a mitigar la alucinación lógica y las distracciones
+        cognitivas en entornos educativos.
+      </p>
+    </header>
+
+    <hr class="border-neutral-900 my-12" />
+
+    <!-- DIAGRAMA DE FLUJO END-TO-END (HTML Puro & CSS) -->
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Flujo de Datos End-to-End
+      </h2>
+
+      <div class="flow-diagram bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 space-y-4 font-mono text-xs">
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">
+            1
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">Frontend (index.html)</p>
+            <p class="text-neutral-500">
+              Envío estructurado via FormData (Evita Prompt Injection).
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
+
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-yellow-500/10 text-yellow-400 flex items-center justify-center font-bold shrink-0">
+            2
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">
+              FastAPI Core Engine (main.py)
+            </p>
+            <p class="text-neutral-500">
+              Recibe binario .py y persiste transacciones en SQLite (Gating).
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
+
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold shrink-0">
+            3
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">
+              Docker Sandbox Hermético (Orquestador)
+            </p>
+            <p class="text-neutral-500">
+              Ejecución aislada (3s máx) contra Pytest oculto. Extrae JSON.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
+
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">
+            4
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">
+              Motor RAG Local (ChromaDB + Ollama)
+            </p>
+            <p class="text-neutral-500">
+              Cruza el error con apuntes del docente. Inferencia con Qwen 2.5
+              Coder 3B.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
+
+        <div class="flex items-center gap-4 p-3 bg-neutral-950 border border-neutral-900 rounded-xl text-emerald-400">
+          <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center font-bold shrink-0">
+            ✓
+          </div>
+          <div>
+            <p class="font-bold">Guardrail de Salida & Feedback Socrático</p>
+            <p class="text-neutral-500">
+              Censura de código directo mediante backend y entrega de pistas
+              lógicas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPECIFICACIÓN TÉCNICA DE LA API -->
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
+        Especificación del Endpoint Núcleo
+      </h2>
+      <div class="bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
+        <div class="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center gap-3">
+          <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded text-xs font-mono font-bold">
+            POST
           </span>
-          <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
-            100% Offline / Local CPU
+          <span class="text-sm font-mono text-neutral-300">/evaluar</span>
+          <span class="text-xs font-mono text-neutral-500 ml-auto">
+            multipart/form-data
           </span>
         </div>
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
-          Edge AI Tutor Sandbox
-        </h1>
-        <p class="text-neutral-400 text-lg leading-relaxed">
-          Arquitectura híbrida de evaluación aislada de código, RAG local e IA cuantizada orientada a mitigar la alucinación lógica y las distracciones cognitivas en entornos educativos.
-        </p>
-      </header>
-
-      <hr class="border-neutral-900 my-12" />
-
-      <!-- DIAGRAMA DE FLUJO END-TO-END (HTML Puro & CSS) -->
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Flujo de Datos End-to-End</h2>
-        
-        <div class="flow-diagram bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 space-y-4 font-mono text-xs">
-          
-          <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">1</div>
-            <div>
-              <p class="text-neutral-200 font-bold">Frontend (index.html)</p>
-              <p class="text-neutral-500">Envío estructurado via FormData (Evita Prompt Injection).</p>
-            </div>
-          </div>
-
-          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
-
-          <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-yellow-500/10 text-yellow-400 flex items-center justify-center font-bold shrink-0">2</div>
-            <div>
-              <p class="text-neutral-200 font-bold">FastAPI Core Engine (main.py)</p>
-              <p class="text-neutral-500">Recibe binario .py y persiste transacciones en SQLite (Gating).</p>
-            </div>
-          </div>
-
-          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
-
-          <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold shrink-0">3</div>
-            <div>
-              <p class="text-neutral-200 font-bold">Docker Sandbox Hermético (Orquestador)</p>
-              <p class="text-neutral-500">Ejecución aislada (3s máx) contra Pytest oculto. Extrae JSON.</p>
-            </div>
-          </div>
-
-          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
-
-          <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
-            <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">4</div>
-            <div>
-              <p class="text-neutral-200 font-bold">Motor RAG Local (ChromaDB + Ollama)</p>
-              <p class="text-neutral-500">Cruza el error con apuntes del docente. Inferencia con Qwen 2.5 Coder 3B.</p>
-            </div>
-          </div>
-
-          <div class="text-center text-neutral-500 text-lg leading-none">▼</div>
-
-          <div class="flex items-center gap-4 p-3 bg-neutral-950 border border-neutral-900 rounded-xl text-emerald-400">
-            <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center font-bold shrink-0">✓</div>
-            <div>
-              <p class="font-bold">Guardrail de Salida & Feedback Socrático</p>
-              <p class="text-neutral-500">Censura de código directo mediante backend y entrega de pistas lógicas.</p>
-            </div>
-          </div>
-
+        <div class="p-6 overflow-x-auto">
+          <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
+            <thead>
+              <tr class="border-b border-neutral-800 text-neutral-500">
+                <th class="pb-2 font-normal">Parámetro</th>
+                <th class="pb-2 font-normal">Tipo</th>
+                <th class="pb-2 font-normal">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-neutral-800/50">
+                <td class="py-3 font-semibold text-neutral-200">alumno_id</td>
+                <td class="py-3 text-cyan-400">string</td>
+                <td class="py-3 text-neutral-500">
+                  Identificador único del estudiante.
+                </td>
+              </tr>
+              <tr class="border-b border-neutral-800/50">
+                <td class="py-3 font-semibold text-neutral-200">
+                  ejercicio_id
+                </td>
+                <td class="py-3 text-cyan-400">string</td>
+                <td class="py-3 text-neutral-500">
+                  Código del problema a evaluar (ej. dict_01).
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 font-semibold text-neutral-200">file</td>
+                <td class="py-3 text-purple-400">file (binary)</td>
+                <td class="py-3 text-neutral-500">
+                  Archivo fuente de Python (.py) desarrollado.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ESPECIFICACIÓN TÉCNICA DE LA API -->
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">Especificación del Endpoint Núcleo</h2>
-        <div class="bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
-          <div class="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center gap-3">
-            <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded text-xs font-mono font-bold">POST</span>
-            <span class="text-sm font-mono text-neutral-300">/evaluar</span>
-            <span class="text-xs font-mono text-neutral-500 ml-auto">multipart/form-data</span>
-          </div>
-          <div class="p-6 overflow-x-auto">
-            <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
-              <thead>
-                <tr class="border-b border-neutral-800 text-neutral-500">
-                  <th class="pb-2 font-normal">Parámetro</th>
-                  <th class="pb-2 font-normal">Tipo</th>
-                  <th class="pb-2 font-normal">Descripción</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-neutral-800/50">
-                  <td class="py-3 font-semibold text-neutral-200">alumno_id</td>
-                  <td class="py-3 text-cyan-400">string</td>
-                  <td class="py-3 text-neutral-500">Identificador único del estudiante.</td>
-                </tr>
-                <tr class="border-b border-neutral-800/50">
-                  <td class="py-3 font-semibold text-neutral-200">ejercicio_id</td>
-                  <td class="py-3 text-cyan-400">string</td>
-                  <td class="py-3 text-neutral-500">Código del problema a evaluar (ej. dict_01).</td>
-                </tr>
-                <tr>
-                  <td class="py-3 font-semibold text-neutral-200">file</td>
-                  <td class="py-3 text-purple-400">file (binary)</td>
-                  <td class="py-3 text-neutral-500">Archivo fuente de Python (.py) desarrollado.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- MODELO DE DATOS & ESTRATEGIA DE GATING -->
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">Persistencia Estricta (Estrategia Anti Rote-Learning)</h2>
-        <p class="text-neutral-400 text-sm mb-4 leading-relaxed">
-          Para medir objetivamente el progreso y evitar que el estudiante memorice o adivine soluciones aleatoriamente, el esquema relacional en <strong>SQLite</strong> almacena el historial transaccional de reintentos de forma atómica.
-        </p>
-        <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800 font-mono text-xs text-cyan-400 overflow-x-auto">
-          <pre><code><span class="text-neutral-500">-- Estructura de control incremental de intentos</span>
+    <!-- MODELO DE DATOS & ESTRATEGIA DE GATING -->
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
+        Persistencia Estricta (Estrategia Anti Rote-Learning)
+      </h2>
+      <p class="text-neutral-400 text-sm mb-4 leading-relaxed">
+        Para medir objetivamente el progreso y evitar que el estudiante memorice
+        o adivine soluciones aleatoriamente, el esquema relacional en{" "}
+        <strong>SQLite</strong> almacena el historial transaccional de
+        reintentos de forma atómica.
+      </p>
+      <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800 font-mono text-xs text-cyan-400 overflow-x-auto">
+        <pre><code><span class="text-neutral-500">-- Estructura de control incremental de intentos</span>
 <span class="text-purple-400">CREATE TABLE</span> IF NOT EXISTS progreso (
     id <span class="text-orange-400">INTEGER</span> PRIMARY KEY AUTOINCREMENT,
     alumno_id <span class="text-orange-400">TEXT</span> NOT NULL,
@@ -145,49 +200,71 @@ import Layout from "../../layouts/Layout.astro";
     estado <span class="text-orange-400">TEXT</span> NOT NULL,
     intentos <span class="text-orange-400">INTEGER</span> DEFAULT 1
 );</code></pre>
+      </div>
+    </section>
+
+    <!-- HALLAZGOS CIENTÍFICOS Y LECCIONES APRENDIDAS -->
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Hallazgos de Ingeniería & Mitigación
+      </h2>
+      <div class="space-y-8">
+        <div class="border-l-2 border-amber-500/30 pl-4">
+          <h3 class="text-base font-bold text-neutral-200 mb-2 flex items-center gap-2">
+            ⚠️ Conflicto de Entorno: Live Reload vs Containerization
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Durante pruebas con el flag{" "}
+            <code class="text-xs bg-neutral-900 px-1 py-0.5 rounded font-mono text-amber-400">
+              --reload
+            </code>{" "}
+            de Uvicorn, la escritura física de los archivos entregados por el
+            alumno disparaba el File System Watcher, reiniciando el servidor e
+            interrumpiendo el ciclo de vida del contenedor Docker antes de leer
+            el reporte JSON.
+          </p>
+          <p class="text-xs text-neutral-500 font-mono mt-2">
+            <strong>Solución:</strong> Modificación del entorno de ejecución
+            aislado de volúmenes o deshabilitación estática del watcher en
+            producción.
+          </p>
         </div>
-      </section>
 
-      <!-- HALLAZGOS CIENTÍFICOS Y LECCIONES APRENDIDAS -->
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Hallazgos de Ingeniería & Mitigación</h2>
-        <div class="space-y-8">
-          
-          <div class="border-l-2 border-amber-500/30 pl-4">
-            <h3 class="text-base font-bold text-neutral-200 mb-2 flex items-center gap-2">
-              ⚠️ Conflicto de Entorno: Live Reload vs Containerization
-            </h3>
-            <p class="text-neutral-400 text-sm leading-relaxed">
-              Durante pruebas con el flag <code class="text-xs bg-neutral-900 px-1 py-0.5 rounded font-mono text-amber-400">--reload</code> de Uvicorn, la escritura física de los archivos entregados por el alumno disparaba el File System Watcher, reiniciando el servidor e interrumpiendo el ciclo de vida del contenedor Docker antes de leer el reporte JSON.
-            </p>
-            <p class="text-xs text-neutral-500 font-mono mt-2">
-              <strong>Solución:</strong> Modificación del entorno de ejecución aislado de volúmenes o deshabilitación estática del watcher en producción.
-            </p>
-          </div>
-
-          <div class="border-l-2 border-purple-500/30 pl-4">
-            <h3 class="text-base font-bold text-neutral-200 mb-2 flex items-center gap-2">
-              🧠 Límites de Razonamiento en Modelos Cuantizados (SLM)
-            </h3>
-            <p class="text-neutral-400 text-sm leading-relaxed">
-              Pruebas masivas con <strong>Qwen 2.5 Coder 3B</strong> demostraron un cumplimiento estricto del formato socrático, pero revelaron alucinaciones lógicas bajo fallas sintácticas complejas (ej. confundir conceptualmente el uso de <code class="text-xs bg-neutral-900 px-1 py-0.5 rounded font-mono">.keys()</code> con <code class="text-xs bg-neutral-900 px-1 py-0.5 rounded font-mono">.values()</code>).
-            </p>
-            <p class="text-xs text-neutral-500 font-mono mt-2">
-              <strong>Mitigación:</strong> Re-estructuración del prompt inyectado usando arquitecturas de <strong>Chain-of-Thought (CoT)</strong> y <strong>Few-Shot Prompting</strong> estructurado para guiar la inferencia atómica del modelo.
-            </p>
-          </div>
-
+        <div class="border-l-2 border-purple-500/30 pl-4">
+          <h3 class="text-base font-bold text-neutral-200 mb-2 flex items-center gap-2">
+            🧠 Límites de Razonamiento en Modelos Cuantizados (SLM)
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Pruebas masivas con <strong>Qwen 2.5 Coder 3B</strong> demostraron
+            un cumplimiento estricto del formato socrático, pero revelaron
+            alucinaciones lógicas bajo fallas sintácticas complejas (ej.
+            confundir conceptualmente el uso de{" "}
+            <code class="text-xs bg-neutral-900 px-1 py-0.5 rounded font-mono">
+              .keys()
+            </code>{" "}
+            con{" "}
+            <code class="text-xs bg-neutral-900 px-1 py-0.5 rounded font-mono">
+              .values()
+            </code>
+            ).
+          </p>
+          <p class="text-xs text-neutral-500 font-mono mt-2">
+            <strong>Mitigación:</strong> Re-estructuración del prompt inyectado
+            usando arquitecturas de <strong>Chain-of-Thought (CoT)</strong> y{" "}
+            <strong>Few-Shot Prompting</strong> estructurado para guiar la
+            inferencia atómica del modelo.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- FOOTER DE LA PÁGINA -->
-      <footer class="project-footer text-center">
-        <p class="text-xs font-mono text-neutral-500">
-          Miller Arias • Detalle Técnico del Proyecto • 2026
-        </p>
-      </footer>
-
-    </main>
+    <!-- FOOTER DE LA PÁGINA -->
+    <footer class="project-footer text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Detalle Técnico del Proyecto • 2026
+      </p>
+    </footer>
+  </main>
 </Layout>
 
 <style>

@@ -3,129 +3,159 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contacto | Miller Arias">
-    
-    <main class="max-w-xl mx-auto contact-layout" transition:name="card-contacto">
-      
-      <a href="/" class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group">
-        <span class="inline-block transform group-hover:-translate-x-1 transition-transform">←</span> 
-        Volver al bento
-      </a>
+  <main class="max-w-xl mx-auto contact-layout" transition:name="card-contacto">
+    <a
+      href="/"
+      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Volver al bento
+    </a>
 
-      <header class="contact-header mb-12">
-        <p class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">Hablemos de ingeniería</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-4">
-          Contacto
-        </h1>
-        <p class="text-neutral-400 text-base leading-relaxed">
-          ¿Tienes un reto técnico, una vacante o un sistema que requiera arquitectura moderna? Conectemos directamente sin intermediarios.
-        </p>
-      </header>
+    <header class="contact-header mb-12">
+      <p class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">
+        Hablemos de ingeniería
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-4">
+        Contacto
+      </h1>
+      <p class="text-neutral-400 text-base leading-relaxed">
+        ¿Tienes un reto técnico, una vacante o un sistema que requiera
+        arquitectura moderna? Conectemos directamente sin intermediarios.
+      </p>
+    </header>
 
-      <section class="mb-6">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">Correo Electrónico</h2>
-        <button 
-          id="copy-email-btn"
-          class="w-full bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-left transition active:scale-[0.99] group cursor-pointer"
-          title="Click para copiar correo"
+    <section class="mb-6">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">
+        Correo Electrónico
+      </h2>
+      <button
+        id="copy-email-btn"
+        class="w-full bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-left transition active:scale-[0.99] group cursor-pointer"
+        title="Click para copiar correo"
+      >
+        <div>
+          <span class="text-lg md:text-xl font-semibold text-neutral-200 block group-hover:text-cyan-400 transition-colors">
+            millerjavierarias@gmail.com
+          </span>
+          <span
+            id="copy-status"
+            aria-live="polite"
+            class="text-xs font-mono text-neutral-500 block mt-1 transition-colors"
+          >
+            Haz click en cualquier parte de este cuadro para copiar
+          </span>
+        </div>
+        <div class="shrink-0 bg-neutral-950 border border-neutral-800/80 px-3 py-1.5 rounded-xl text-xs font-mono text-neutral-400 group-hover:text-white transition-colors">
+          Copiar <span aria-hidden="true">📋</span>
+        </div>
+      </button>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">
+        Canales Directos
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a
+          href="https://www.linkedin.com/in/miller-javier-arias-quintero/?locale=en-US"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
         >
           <div>
-            <span class="text-lg md:text-xl font-semibold text-neutral-200 block group-hover:text-cyan-400 transition-colors">
-              millerjavierarias@gmail.com
+            <span class="text-sm font-semibold text-neutral-200 block">
+              LinkedIn
             </span>
-            <span id="copy-status" aria-live="polite" class="text-xs font-mono text-neutral-500 block mt-1 transition-colors">
-              Haz click en cualquier parte de este cuadro para copiar
+            <span class="text-[11px] font-mono text-neutral-500">
+              Perfil Profesional
             </span>
           </div>
-          <div class="shrink-0 bg-neutral-950 border border-neutral-800/80 px-3 py-1.5 rounded-xl text-xs font-mono text-neutral-400 group-hover:text-white transition-colors">
-            Copiar <span aria-hidden="true">📋</span>
+          <span class="text-neutral-600 group-hover:text-neutral-300 text-lg transition-colors">
+            ↗
+          </span>
+        </a>
+
+        <a
+          href="https://wa.me/573138220202?text=Hola%20Miller,%20vi%20tu%20portafolio%20y%20me%20gustaría%20que%20habláramos."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
+        >
+          <div>
+            <span class="text-sm font-semibold text-emerald-400 block">
+              WhatsApp
+            </span>
+            <span class="text-[11px] font-mono text-neutral-500">
+              Respuesta Rápida
+            </span>
           </div>
-        </button>
-      </section>
+          <span class="text-neutral-600 group-hover:text-emerald-400 text-lg transition-colors">
+            ↗
+          </span>
+        </a>
 
-      <section class="space-y-3">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">Canales Directos</h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          
-          <a 
-            href="https://www.linkedin.com/in/miller-javier-arias-quintero/?locale=en-US" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
-          >
-            <div>
-              <span class="text-sm font-semibold text-neutral-200 block">LinkedIn</span>
-              <span class="text-[11px] font-mono text-neutral-500">Perfil Profesional</span>
-            </div>
-            <span class="text-neutral-600 group-hover:text-neutral-300 text-lg transition-colors">↗</span>
-          </a>
+        <a
+          href="https://github.com/Miller1999"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99] sm:col-span-2"
+        >
+          <div>
+            <span class="text-sm font-semibold text-neutral-200 block">
+              GitHub Repositories
+            </span>
+            <span class="text-[11px] font-mono text-neutral-500">
+              Explora mis commits, arquitecturas y código fuente
+            </span>
+          </div>
+          <span class="text-neutral-600 group-hover:text-white text-lg transition-colors">
+            ↗
+          </span>
+        </a>
+      </div>
+    </section>
 
-          <a 
-            href="https://wa.me/573138220202?text=Hola%20Miller,%20vi%20tu%20portafolio%20y%20me%20gustaría%20que%20habláramos." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
-          >
-            <div>
-              <span class="text-sm font-semibold text-emerald-400 block">WhatsApp</span>
-              <span class="text-[11px] font-mono text-neutral-500">Respuesta Rápida</span>
-            </div>
-            <span class="text-neutral-600 group-hover:text-emerald-400 text-lg transition-colors">↗</span>
-          </a>
+    <footer class="contact-footer mt-16 text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        <span aria-hidden="true">📍</span> Bogotá, Colombia • Zona Horaria UTC-5
+      </p>
+    </footer>
+  </main>
 
-          <a 
-            href="https://github.com/Miller1999" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99] sm:col-span-2"
-          >
-            <div>
-              <span class="text-sm font-semibold text-neutral-200 block">GitHub Repositories</span>
-              <span class="text-[11px] font-mono text-neutral-500">Explora mis commits, arquitecturas y código fuente</span>
-            </div>
-            <span class="text-neutral-600 group-hover:text-white text-lg transition-colors">↗</span>
-          </a>
+  <!-- SCRIPT DE COPIADO AL PORTAPAPELES COMPATIBLE CON CLIENTROUTER -->
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const copyBtn = document.getElementById("copy-email-btn");
+      const statusText = document.getElementById("copy-status");
+      if (!copyBtn || !statusText || copyBtn.dataset.bound) return;
+      copyBtn.dataset.bound = "true";
 
-        </div>
-      </section>
+      const defaultStatus = statusText.textContent;
 
-      <footer class="contact-footer mt-16 text-center">
-        <p class="text-xs font-mono text-neutral-500">
-          <span aria-hidden="true">📍</span> Bogotá, Colombia • Zona Horaria UTC-5
-        </p>
-      </footer>
-
-    </main>
-
-    <!-- SCRIPT DE COPIADO AL PORTAPAPELES COMPATIBLE CON CLIENTROUTER -->
-    <script is:inline>
-      document.addEventListener('astro:page-load', () => {
-        const copyBtn = document.getElementById('copy-email-btn');
-        const statusText = document.getElementById('copy-status');
-        if (!copyBtn || !statusText || copyBtn.dataset.bound) return;
-        copyBtn.dataset.bound = 'true';
-
-        const defaultStatus = statusText.textContent;
-
-        copyBtn.addEventListener('click', async () => {
-          try {
-            await navigator.clipboard.writeText('millerjavierarias@gmail.com');
-            statusText.textContent = '¡Copiado exitosamente al portapapeles! 🎉';
-            statusText.classList.remove('text-neutral-500');
-            statusText.classList.add('text-cyan-400');
-            setTimeout(() => {
-              statusText.textContent = defaultStatus;
-              statusText.classList.remove('text-cyan-400');
-              statusText.classList.add('text-neutral-500');
-            }, 2500);
-          } catch {
-            statusText.textContent = 'No se pudo copiar. Selecciona el correo manualmente.';
-            statusText.classList.remove('text-neutral-500');
-            statusText.classList.add('text-red-400');
-          }
-        });
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("millerjavierarias@gmail.com");
+          statusText.textContent = "¡Copiado exitosamente al portapapeles! 🎉";
+          statusText.classList.remove("text-neutral-500");
+          statusText.classList.add("text-cyan-400");
+          setTimeout(() => {
+            statusText.textContent = defaultStatus;
+            statusText.classList.remove("text-cyan-400");
+            statusText.classList.add("text-neutral-500");
+          }, 2500);
+        } catch {
+          statusText.textContent =
+            "No se pudo copiar. Selecciona el correo manualmente.";
+          statusText.classList.remove("text-neutral-500");
+          statusText.classList.add("text-red-400");
+        }
       });
-    </script>
+    });
+  </script>
 </Layout>
 
 <style>

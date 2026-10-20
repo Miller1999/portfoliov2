@@ -1,50 +1,79 @@
 # 👨‍💻 Miller Arias | Software Engineer Portfolio
 
-Un portafolio personal moderno, ultrarrápido y responsivo construido con **Astro** y **Tailwind CSS**, implementando una interfaz basada en el patrón de diseño **Bento Grid**.
+Portafolio personal moderno, ultrarrápido y responsivo construido con **Astro** y **Tailwind CSS**, con una interfaz basada en el patrón de diseño **Bento Grid**.
 
 ![Astro](https://img.shields.io/badge/Astro-0C111A?style=for-the-badge&logo=astro&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## ✨ Características Principales
+**Producción:** https://miller-arias-dev.vercel.app/
 
-*   **Bento Grid UI:** Arquitectura visual asimétrica que prioriza el escaneo rápido de la información y la jerarquía de los datos.
-*   **Transiciones Nativas:** Uso de `ClientRouter` (View Transitions API de Astro) para una navegación fluida tipo SPA sin el peso de un framework complejo.
-*   **Performance First:** Cero JavaScript innecesario en el cliente. Interactividad mínima gestionada con Vanilla JS para mantener el puntaje de Lighthouse en 100.
-*   **Diseño Oscuro Minimalista:** Paleta de colores basada en `neutral-950` con acentos en `cyan-500` para un look técnico y profesional.
-*   **Responsive Design:** Cuadrícula auto-adaptable que escala perfectamente desde dispositivos móviles (1 columna) hasta pantallas ultra-anchas (4 columnas).
-*   **Self-hosted Assets:** Currículum Vitae y recursos gestionados localmente para evitar dependencias externas de CORS o redirecciones a Google Drive.
+## ✨ Características principales
 
----
+- **Bento Grid UI:** arquitectura visual asimétrica que prioriza el escaneo rápido de la información.
+- **Transiciones nativas:** `ClientRouter` (View Transitions API de Astro) con `transition:name` entre tarjetas y páginas, sin el peso de un framework de cliente.
+- **Performance first:** cero JavaScript innecesario en el cliente; la interactividad mínima se resuelve con Vanilla JS inline.
+- **Diseño oscuro minimalista:** paleta `neutral-950` con acentos `cyan-500`.
+- **Responsive:** cuadrícula auto-adaptable de 1 a 4 columnas.
+- **Assets self-hosted:** CV en PDF y favicons servidos localmente.
 
 ## 🛠️ Tech Stack
 
-| Tecnología | Rol en el Proyecto |
-| :--- | :--- |
-| **Astro** | Framework principal, enrutamiento estático y View Transitions. |
-| **Tailwind CSS** | Sistema de utilidades para el estilado ágil y coherente. |
-| **Vanilla JS** | Lógica de interactividad ligera (ej. acordeón de certificaciones). |
-| **HTML5/CSS3** | Semántica web, animaciones clave (`@keyframes`) y SVG inlining. |
-| **Vercel** | Hosting y despliegue continuo (CI/CD) conectado a GitHub. |
+| Tecnología         | Rol en el proyecto                                   |
+| :----------------- | :--------------------------------------------------- |
+| **Astro 6**        | Framework principal, enrutamiento estático y layout. |
+| **Tailwind CSS 4** | Sistema de utilidades (config CSS-first, `@theme`).  |
+| **TypeScript**     | Tipado estricto (`astro/tsconfigs/strict`).          |
+| **Vanilla JS**     | Interactividad ligera (copiar correo, acordeón).     |
+| **Vercel**         | Hosting y despliegue continuo (CI/CD desde GitHub).  |
 
----
+> **Nota:** Tailwind CSS 4 no usa `tailwind.config.cjs`; la configuración vive en `src/styles/global.css` mediante directivas `@theme`/`@layer`.
 
-## 📂 Estructura del Proyecto
+## 📂 Estructura del proyecto
 
 ```text
 /
-├── public/                 # Assets estáticos (se sirven en la raíz /)
-│   ├── favicon.svg         # Monograma SVG personalizado
-│   └── CV_Miller_Arias.pdf # Currículum para descarga directa
+├── public/                      # Assets estáticos servidos en la raíz
+│   ├── favicon.svg              # Monograma SVG
+│   ├── favicon.ico
+│   └── CV_Miller_Arias.pdf      # Currículum para descarga directa
 ├── src/
-│   ├── pages/              # Sistema de enrutamiento basado en archivos
-│   │   ├── index.astro     # Bento Grid Principal
-│   │   ├── educacion.astro # Hub de educación y certificaciones
-│   │   ├── experiencia/    # Historial laboral
-│   │   └── proyectos/      # Casos de estudio técnicos
+│   ├── layouts/
+│   │   └── Layout.astro         # Layout único (head, ClientRouter, body)
+│   ├── pages/                   # Enrutamiento basado en archivos
+│   │   ├── index.astro          # Bento Grid principal
+│   │   ├── educacion.astro      # Educación y certificaciones
+│   │   ├── experiencia.astro    # Historial laboral
+│   │   ├── experiencia/devup.astro
+│   │   ├── contacto.astro
+│   │   └── proyectos/           # Casos de estudio técnicos
 │   └── styles/
-│       └── global.css      # Directivas de Tailwind y estilos base
-├── astro.config.mjs        # Configuración del framework
-├── tailwind.config.cjs     # Configuración del tema y colores
-└── package.json            # Dependencias y scripts
+│       └── global.css           # Tailwind + estilos base globales
+├── .github/workflows/ci.yml     # CI: format, typecheck, build
+├── astro.config.mjs             # Configuración del framework
+├── vercel.json                  # Redirects y cabeceras del deploy
+└── package.json
+```
+
+## 🚀 Comandos
+
+Todos los comandos se ejecutan desde la raíz del proyecto:
+
+| Comando                | Acción                                            |
+| :--------------------- | :------------------------------------------------ |
+| `npm install`          | Instala las dependencias.                         |
+| `npm run dev`          | Servidor de desarrollo en `localhost:4321`.       |
+| `npm run build`        | Genera el sitio de producción en `./dist/`.       |
+| `npm run preview`      | Previsualiza el build de producción.              |
+| `npm run format`       | Formatea con Prettier (plugins Astro + Tailwind). |
+| `npm run format:check` | Verifica el formato sin modificar archivos.       |
+| `npm run typecheck`    | Ejecuta `astro check` (TypeScript estricto).      |
+
+## ✅ Calidad y CI
+
+El workflow de GitHub Actions (`.github/workflows/ci.yml`) valida en cada push/PR a `main`: formato (Prettier), tipos (`astro check`) y build. Requiere Node ≥ 22.
+
+## ⚠️ Deuda técnica conocida
+
+- **Dependencias:** hay advisories conocidas en la cadena de Astro 6 que solo se cierran con el **upgrade mayor a Astro ≥ 7.2.8** (ninguna explotable en un sitio estático sin input de usuario). El paso `npm audit` del CI se ejecuta como informativo hasta entonces.

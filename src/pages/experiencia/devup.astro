@@ -3,136 +3,180 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Devup Consulting SAS | Miller Arias">
-    
-    <!-- Contenedor Principal con transiciones de página -->
-    <main class="max-w-3xl mx-auto project-layout" transition:name="card-status">
-      
-      <!-- Botón de retorno -->
-      <a href="/" class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group">
-        <span class="inline-block transform group-hover:-translate-x-1 transition-transform">←</span> 
-        Volver al bento
-      </a>
+  <!-- Contenedor Principal con transiciones de página -->
+  <main class="max-w-3xl mx-auto project-layout" transition:name="card-status">
+    <!-- Botón de retorno -->
+    <a
+      href="/"
+      class="back-btn inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Volver al bento
+    </a>
 
-      <!-- CABECERA DE EXPERIENCIA -->
-      <header class="project-header">
-        <div class="flex flex-wrap items-center gap-3 mb-4">
-          <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
-            Experiencia Actual
-          </span>
-          <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
-            B2B / Enterprise Telecom
-          </span>
-        </div>
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-2">
-          Devup Consulting SAS
-        </h1>
-        <h2 class="text-xl text-neutral-400 font-medium mb-6">Full Stack Developer (React & Go)</h2>
-        <p class="text-neutral-400 text-lg leading-relaxed">
-          Desarrollo y optimización de interfaces y servicios core para una plataforma de gestión de redes y telecomunicaciones. Orientado a garantizar la integridad de datos, resiliencia del sistema y una usabilidad impecable para clientes corporativos de alto nivel (como VIVO y NTT).
-        </p>
-      </header>
+    <!-- CABECERA DE EXPERIENCIA -->
+    <header class="project-header">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Experiencia Actual
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          B2B / Enterprise Telecom
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-2">
+        Devup Consulting SAS
+      </h1>
+      <h2 class="text-xl text-neutral-400 font-medium mb-6">
+        Full Stack Developer (React & Go)
+      </h2>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Desarrollo y optimización de interfaces y servicios core para una
+        plataforma de gestión de redes y telecomunicaciones. Orientado a
+        garantizar la integridad de datos, resiliencia del sistema y una
+        usabilidad impecable para clientes corporativos de alto nivel (como VIVO
+        y NTT).
+      </p>
+    </header>
 
-      <hr class="border-neutral-900 my-12" />
+    <hr class="border-neutral-900 my-12" />
 
-      <!-- IMPACTO Y LOGROS TÉCNICOS -->
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">Iniciativas Core: Fast Track & Usabilidad</h2>
-        
-        <div class="space-y-6">
-          
-          <!-- Logro 1: Prevención de Errores DB -->
-          <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
-            <div class="flex items-start gap-4">
-              <div class="mt-1 w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold shrink-0">1</div>
-              <div>
-                <h3 class="text-base font-bold text-neutral-200 mb-2">
-                  Protección de Persistencia y Prevención de Truncamiento (Error 1406)
-                </h3>
-                <p class="text-neutral-400 text-sm leading-relaxed mb-3">
-                  Identifiqué y resolví vulnerabilidades de validación donde *payloads* masivos (más de 255 caracteres en configuraciones de reportes) eran rechazados directamente por la base de datos MySQL con el <code class="bg-neutral-950 px-1 py-0.5 rounded text-xs border border-neutral-800">Error 1406 (22001): Data too long</code>.
-                </p>
-                <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg border border-emerald-500/20">
-                  <strong>Solución implementada:</strong> Arquitectura de validación estricta en el Front-End (React) para interceptar cadenas largas e inputs no controlados antes del consumo de la API, reduciendo la carga del servidor y previniendo caídas silenciosas.
-                </div>
+    <!-- IMPACTO Y LOGROS TÉCNICOS -->
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Iniciativas Core: Fast Track & Usabilidad
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Logro 1: Prevención de Errores DB -->
+        <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="mt-1 w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold shrink-0">
+              1
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-neutral-200 mb-2">
+                Protección de Persistencia y Prevención de Truncamiento (Error
+                1406)
+              </h3>
+              <p class="text-neutral-400 text-sm leading-relaxed mb-3">
+                Identifiqué y resolví vulnerabilidades de validación donde
+                *payloads* masivos (más de 255 caracteres en configuraciones de
+                reportes) eran rechazados directamente por la base de datos
+                MySQL con el{" "}
+                <code class="bg-neutral-950 px-1 py-0.5 rounded text-xs border border-neutral-800">
+                  Error 1406 (22001): Data too long
+                </code>
+                .
+              </p>
+              <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg border border-emerald-500/20">
+                <strong>Solución implementada:</strong> Arquitectura de
+                validación estricta en el Front-End (React) para interceptar
+                cadenas largas e inputs no controlados antes del consumo de la
+                API, reduciendo la carga del servidor y previniendo caídas
+                silenciosas.
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Logro 2: Sanitización de Inputs y Lógica de Negocio -->
-          <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
-            <div class="flex items-start gap-4">
-              <div class="mt-1 w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">2</div>
-              <div>
-                <h3 class="text-base font-bold text-neutral-200 mb-2">
-                  Sanitización de Umbrales y Algoritmos de Performance
-                </h3>
-                <p class="text-neutral-400 text-sm leading-relaxed mb-3">
-                  En el módulo de <em>Gerenciamento de Performance</em> (KPI Views), el sistema permitía la inserción de métricas lógicamente imposibles (ej. tiempo mínimo de 0, o valores numéricos desbordados como <code class="bg-neutral-950 px-1 py-0.5 rounded text-xs border border-neutral-800">9999999999999999999</code>).
-                </p>
-                <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg border border-emerald-500/20">
-                  <strong>Solución implementada:</strong> Desarrollo de guardarraíles (guardrails) en la UI que bloquean el guardado de umbrales inválidos e inyectan feedback visual inmediato, asegurando que las métricas enviadas al backend en Go sean 100% coherentes y operables.
-                </div>
+        <!-- Logro 2: Sanitización de Inputs y Lógica de Negocio -->
+        <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="mt-1 w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">
+              2
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-neutral-200 mb-2">
+                Sanitización de Umbrales y Algoritmos de Performance
+              </h3>
+              <p class="text-neutral-400 text-sm leading-relaxed mb-3">
+                En el módulo de <em>Gerenciamento de Performance</em> (KPI
+                Views), el sistema permitía la inserción de métricas lógicamente
+                imposibles (ej. tiempo mínimo de 0, o valores numéricos
+                desbordados como{" "}
+                <code class="bg-neutral-950 px-1 py-0.5 rounded text-xs border border-neutral-800">
+                  9999999999999999999
+                </code>
+                ).
+              </p>
+              <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg border border-emerald-500/20">
+                <strong>Solución implementada:</strong> Desarrollo de
+                guardarraíles (guardrails) en la UI que bloquean el guardado de
+                umbrales inválidos e inyectan feedback visual inmediato,
+                asegurando que las métricas enviadas al backend en Go sean 100%
+                coherentes y operables.
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Logro 3: Alineación Cliente/Servidor -->
-          <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
-            <div class="flex items-start gap-4">
-              <div class="mt-1 w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">3</div>
-              <div>
-                <h3 class="text-base font-bold text-neutral-200 mb-2">
-                  Alineación de Experiencia de Usuario (Coherencia Front/Back)
-                </h3>
-                <p class="text-neutral-400 text-sm leading-relaxed">
-                  Lideré la unificación de los mensajes de error entre las validaciones del servidor y la interfaz del usuario. Atendiendo requerimientos de clientes corporativos (alineamientos con NTT COE y Vivo), garanticé que los fallos del backend se tradujeran en alertas amigables y accionables, bloqueando configuraciones indebidas que invalidaban el uso de los módulos de alarmas.
-                </p>
-              </div>
+        <!-- Logro 3: Alineación Cliente/Servidor -->
+        <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="mt-1 w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">
+              3
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-neutral-200 mb-2">
+                Alineación de Experiencia de Usuario (Coherencia Front/Back)
+              </h3>
+              <p class="text-neutral-400 text-sm leading-relaxed">
+                Lideré la unificación de los mensajes de error entre las
+                validaciones del servidor y la interfaz del usuario. Atendiendo
+                requerimientos de clientes corporativos (alineamientos con NTT
+                COE y Vivo), garanticé que los fallos del backend se tradujeran
+                en alertas amigables y accionables, bloqueando configuraciones
+                indebidas que invalidaban el uso de los módulos de alarmas.
+              </p>
             </div>
           </div>
-
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- STACK TECNOLÓGICO -->
-      <section class="section-block">
-        <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">Entorno Técnico & Herramientas</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono text-xs text-center">
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            React.js
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            Go (Golang)
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            MySQL
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            Chrome DevTools
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            TypeScript
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            REST APIs
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            Git / Version Control
-          </div>
-          <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
-            Agile / Fast Track
-          </div>
+    <!-- STACK TECNOLÓGICO -->
+    <section class="section-block">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
+        Entorno Técnico & Herramientas
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono text-xs text-center">
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          React.js
         </div>
-      </section>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          Go (Golang)
+        </div>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          MySQL
+        </div>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          Chrome DevTools
+        </div>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          TypeScript
+        </div>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          REST APIs
+        </div>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          Git / Version Control
+        </div>
+        <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
+          Agile / Fast Track
+        </div>
+      </div>
+    </section>
 
-      <!-- FOOTER DE LA PÁGINA -->
-      <footer class="project-footer text-center">
-        <p class="text-xs font-mono text-neutral-500">
-          Miller Arias • Experiencia Profesional • Devup Consulting SAS
-        </p>
-      </footer>
-
-    </main>
+    <!-- FOOTER DE LA PÁGINA -->
+    <footer class="project-footer text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Experiencia Profesional • Devup Consulting SAS
+      </p>
+    </footer>
+  </main>
 </Layout>
 
 <style>
