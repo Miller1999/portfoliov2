@@ -1,0 +1,200 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Job Search Engine | Miller Arias"
+  description="Local-first pipeline for job searching with scraping, local LLM evaluation, CV generation, and complete tracking."
+>
+  <main
+    class="max-w-3xl mx-auto mt-16 md:mt-24"
+    transition:name="card-project-jobsearch"
+  >
+    <a
+      href="/proyectos"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Back to projects
+    </a>
+
+    <header class="mb-12 mt-11">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Data Pipeline
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          100% Local-First
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          2026
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+        Job Search Engine
+      </h1>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Automated local-first pipeline for job searching. Scrapes multi-board
+        job postings with JobSpy, evaluates fit against your profile using a
+        local LLM (Ollama), generates tailored CVs and cover letters, converts
+        them to PDF, and manages the entire application tracking process without
+        paid APIs or sending data to third parties.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          href="https://github.com/Miller1999/job-search"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition active:scale-[0.99]"
+        >
+          <span>View Repository on GitHub</span>
+          <span class="text-neutral-600">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <hr class="border-neutral-900 my-12" />
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Tech Stack
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Python
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          uv
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Ollama (deepseek-r1:14b)
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          python-jobspy
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          SQLite
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Pandas
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          WeasyPrint
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Pydantic
+        </span>
+      </div>
+    </section>
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Pipeline End-to-End
+      </h2>
+      <div class="bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 space-y-4 font-mono text-xs">
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">
+            1
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">Multi-Board Ingestion</p>
+            <p class="text-neutral-500">
+              Scraping with JobSpy (Indeed, LinkedIn, Glassdoor) + manual posts
+              from social media/WhatsApp.
+            </p>
+          </div>
+        </div>
+        <div class="text-center text-neutral-500">▼</div>
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">
+            2
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">Local LLM Evaluation</p>
+            <p class="text-neutral-500">
+              0-100 scoring against profile.md, deal-breakers, seniority, and
+              location with Ollama.
+            </p>
+          </div>
+        </div>
+        <div class="text-center text-neutral-500">▼</div>
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold shrink-0">
+            3
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">Automated Tailoring</p>
+            <p class="text-neutral-500">
+              Generation of CVs and cover letters adapted per job posting, in
+              English/Spanish.
+            </p>
+          </div>
+        </div>
+        <div class="text-center text-neutral-500">▼</div>
+        <div class="flex items-center gap-4 p-3 bg-neutral-900/60 rounded-xl border border-neutral-800/50">
+          <div class="w-8 h-8 rounded-full bg-orange-500/10 text-orange-400 flex items-center justify-center font-bold shrink-0">
+            4
+          </div>
+          <div>
+            <p class="text-neutral-200 font-bold">PDF + Tracking</p>
+            <p class="text-neutral-500">
+              Conversion with Pandoc/WeasyPrint, HTML/CSV dashboard, and
+              application tracking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Key Highlights
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Unified Pipeline
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            A single command (`daily.py`) chains the entire flow from scraping
+            to PDFs and the application list.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Manual Job Posts
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Supports postings from Instagram, TikTok, Facebook, LinkedIn, or
+            WhatsApp with LLM-based extraction.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Smart Tracking
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Status system, overdue follow-ups, ghosting detection, and
+            deduplication across boards.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">Zero Cost</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            100% local with Ollama. No paid APIs, no sending sensitive data to
+            the cloud.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Job Search Engine • 2026
+      </p>
+    </footer>
+  </main>
+</Layout>

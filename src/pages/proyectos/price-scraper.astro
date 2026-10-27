@@ -1,0 +1,155 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Price Scraper Web App | Miller Arias"
+  description="Streamlit web app for multi-store price scraping with CSV/Excel export."
+>
+  <main
+    class="max-w-3xl mx-auto mt-16 md:mt-24"
+    transition:name="card-project-pricescraper"
+  >
+    <a
+      href="/proyectos"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-purple-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Back to projects
+    </a>
+
+    <header class="mb-12 mt-11">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Web Scraping
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          Data Collection
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          2025
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+        Price Scraper Web App
+      </h1>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Streamlit web app for comparing prices across multiple online stores.
+        Dynamic JSON configuration, BeautifulSoup extraction, automatic export
+        to CSV/Excel, and logging for debugging.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          href="https://github.com/Miller1999/price-scraper"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition active:scale-[0.99]"
+        >
+          <span>View Repository on GitHub</span>
+          <span class="text-neutral-600">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <hr class="border-neutral-900 my-12" />
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Tech Stack
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Python
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Streamlit
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          BeautifulSoup4
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Requests
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Pandas
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          OpenPyXL
+        </span>
+      </div>
+    </section>
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Supported Stores
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-neutral-900/40 border border-neutral-900 p-4 rounded-2xl text-center">
+          <p class="text-neutral-200 font-semibold">Amazon</p>
+          <p class="text-neutral-500 text-xs mt-1">Global</p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-4 rounded-2xl text-center">
+          <p class="text-neutral-200 font-semibold">Mercado Libre Colombia</p>
+          <p class="text-neutral-500 text-xs mt-1">CO</p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-4 rounded-2xl text-center">
+          <p class="text-neutral-200 font-semibold">Falabella Colombia</p>
+          <p class="text-neutral-500 text-xs mt-1">CO</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Key Features
+      </h2>
+      <div class="space-y-4">
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Intuitive Web Interface
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Built with Streamlit for quick use without complexity. Just enter a
+            URL, select a store, and get the price instantly.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Dynamic Configuration
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            CSS selectors per store are defined in `stores.json`, making it easy
+            to add new sites without modifying the core logic.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Automatic Export
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Automatically generates `results.csv` and `results.xlsx` with search
+            history for later analysis.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Logging & Robustness
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Complete logging system for troubleshooting with error handling and
+            clear user feedback.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Price Scraper Web App • 2025
+      </p>
+    </footer>
+  </main>
+</Layout>

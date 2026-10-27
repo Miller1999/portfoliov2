@@ -15,7 +15,7 @@ const {
   class: className = "",
 } = Astro.props;
 
-const base = "bg-neutral-900 rounded-3xl p-6 border border-neutral-800";
+const base = "bg-neutral-900 rounded-3xl p-6 border border-neutral-800 card-fluid";
 const interactive =
   "group block no-underline text-current transition active:scale-[0.99]";
 const combined = `${base} ${href ? interactive : ""} ${className}`.trim();

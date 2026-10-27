@@ -23,11 +23,11 @@ export interface Profile {
 export const profile: Profile = {
   name: "Miller Arias",
   tagline:
-    "Electronic Engineer & Full Stack Developer especializado en aplicaciones modernas con React, GraphQL y Go.",
+    "Electronic Engineer & Full Stack Developer specialized in modern applications with React, GraphQL, and Go.",
   role: "Full Stack Developer",
   company: "Devup Consulting SAS",
   location: "Bogotá, Colombia",
-  availability: "Disponible",
+  availability: "Available",
   email: "millerjavierarias@gmail.com",
   phone: "573138220202",
   github: "https://github.com/Miller1999",
@@ -36,7 +36,7 @@ export const profile: Profile = {
   cvPath: "/CV_Miller_Arias.pdf",
   techStack: ["Go (Golang)", "TypeScript", "React.js", "GraphQL"],
   languages: [
-    { name: "Español", level: "Nativo" },
+    { name: "Spanish", level: "Native" },
     { name: "English", level: "C1", accent: true },
     { name: "Deutsch", level: "A2" },
   ],

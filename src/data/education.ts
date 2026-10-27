@@ -9,28 +9,28 @@ export interface EducationItem {
 
 export const education: EducationItem[] = [
   {
-    title: "Ingeniería Electrónica",
+    title: "Electronic Engineering",
     date: "2019 — 2027",
     institution: "Universidad Nacional de Colombia",
-    detail: "Énfasis en Robótica y Mecatrónica",
+    detail: "Emphasis in Robotics and Mechatronics",
     accent: "cyan",
     description:
-      "Formación analítica y profunda basada en la resolución de problemas complejos, automatización, diseño de hardware y fundamentos de ciencias de la computación.",
+      "Analytical and in-depth training based on complex problem-solving, automation, hardware design, and computer science fundamentals.",
   },
   {
-    title: "Especializaciones Full Stack & Front End",
+    title: "Full Stack & Front-End Specializations",
     date: "2022 — 2023",
-    institution: "Plataformas Tecnológicas",
+    institution: "Online Learning Platforms",
     detail: "Platzi & Alura Latam",
     accent: "emerald",
     description:
-      "Rutas formativas de nivel profesional enfocadas en ecosistemas modernos de desarrollo web, arquitectura de software basada en JavaScript (Next.js, React, Node.js) y flujos DevOps (Docker).",
+      "Professional-level learning paths focused on modern web development ecosystems, JavaScript-based software architecture (Next.js, React, Node.js), and DevOps workflows (Docker).",
   },
   {
-    title: "Aptitud Profesional de Inglés (C1)",
-    date: "Certificado",
+    title: "Professional English Proficiency (C1)",
+    date: "Certified",
     institution: "Centro Colombo Americano Bogotá",
-    detail: "Dominio Avanzado",
+    detail: "Advanced Proficiency",
     accent: "purple",
   },
 ];
@@ -39,43 +39,43 @@ export const certCategories = [
   {
     label: "Backend & Logic",
     accent: "text-cyan-400",
-    tech: "Python, Go, C# y Arquitectura",
+    tech: "Python, Go, C# & Architecture",
     detail:
-      "Manejo avanzado de estructuras de datos, lógica orientada a objetos y algoritmos eficientes.",
+      "Advanced handling of data structures, object-oriented logic, and efficient algorithms.",
   },
   {
     label: "Frontend Systems",
     accent: "text-emerald-400",
     tech: "React, Next.js, Relay & UI",
     detail:
-      "Construcción de interfaces interactivas, renderizado del lado del servidor y consumo óptimo de datos.",
+      "Building interactive interfaces, server-side rendering, and optimal data consumption.",
   },
   {
     label: "Data & Storage",
     accent: "text-purple-400",
     tech: "SQL, MySQL & GraphQL",
     detail:
-      "Diseño de bases de datos relacionales, optimización de queries complejas y modelado de datos.",
+      "Relational database design, optimization of complex queries, and data modeling.",
   },
   {
     label: "AI & Hardware",
     accent: "text-neutral-400",
-    tech: "Modelos de IA, IoT y Robótica",
+    tech: "AI Models, IoT & Robotics",
     detail:
-      "Automatización de captura de información clínica y flujos inteligentes aplicados al negocio.",
+      "Automation of clinical information capture and intelligent workflows applied to business.",
   },
 ] as const;
 
 export const featuredCourses = [
-  "Python: Comprehensions & Errores",
-  "Curso Práctico de SQL y MySQL",
-  "Algoritmia y Estructuras de Datos",
-  "Programación Asíncrona con JS",
-  "Git y GitHub Avanzado",
-  "React.js & Manejo de Estado Profesional",
-  "Diseño de Arquitectura de Software",
-  "Estrategias de Optimización en Bases de Datos",
-  "Introducción Práctica a Modelos de IA",
+  "Python: Comprehensions & Errors",
+  "Practical SQL & MySQL Course",
+  "Algorithms & Data Structures",
+  "Asynchronous Programming with JS",
+  "Advanced Git & GitHub",
+  "React.js & Professional State Management",
+  "Software Architecture Design",
+  "Database Optimization Strategies",
+  "Practical Introduction to AI Models",
   "Unity 2D/3D Engine Core",
 ];
 

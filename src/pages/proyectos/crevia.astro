@@ -1,0 +1,113 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Crevia | Miller Arias"
+  description="Crevia - Cross-platform mobile app for client management and tracking with a local-first architecture."
+>
+  <main
+    class="max-w-3xl mx-auto mt-16 md:mt-24"
+    transition:name="card-project-crevia"
+  >
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Back to home
+    </a>
+
+    <header class="mb-12 mt-11">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Mobile App
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          Local-First Architecture
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+        Crevia
+      </h1>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Cross-platform mobile app built with Expo and React Native, focused on
+        client management and tracking with a fluid, native user experience.
+      </p>
+    </header>
+
+    <hr class="border-neutral-900 my-12" />
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Tech Stack
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          React Native
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Expo SDK 57
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          TypeScript
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Expo Router
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          SQLite (Drizzle ORM)
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Zod
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          React Native Reanimated
+        </span>
+      </div>
+    </section>
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Key Features
+      </h2>
+      <div class="space-y-4">
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Local-First Architecture
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Local persistence with Expo SQLite and Drizzle ORM for offline
+            operation, with a typed schema and controlled migrations.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Native Experience
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            UI optimized with native components, fluid animations with
+            Reanimated, and support for biometric authentication.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Security & Privacy
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Secure storage with Expo SecureStore, screenshot protection, and Zod
+            validation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Crevia • 2026
+      </p>
+    </footer>
+  </main>
+</Layout>

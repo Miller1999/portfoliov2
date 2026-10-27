@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BentoCard from "../../components/BentoCard.astro";
+import { projectCards, badgeAccent } from "../../data/projects";
+---
+
+<Layout
+  title="Projects | Miller Arias"
+  description="Complete archive of projects by Miller Arias - Full Stack Developer, AI/ML, Mobile and more."
+  bodyClass="bg-neutral-950 text-neutral-50 min-h-dvh p-6 md:p-12 font-sans selection:bg-cyan-500 selection:text-white"
+>
+  <main class="max-w-6xl mx-auto">
+    <header class="mb-10 mt-6 md:mt-12 animate-fade-up">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 py-2 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group mb-6"
+      >
+        <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+          ←
+        </span>
+        Back to home
+      </a>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+            Projects
+          </h1>
+          <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs font-mono text-neutral-400">
+            {projectCards.length}
+          </span>
+        </div>
+        <p class="text-neutral-400 text-lg max-w-2xl leading-relaxed">
+          Complete collection of personal and professional projects.
+        </p>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[minmax(180px,auto)]">
+      {projectCards.map((project) => (
+        <BentoCard
+          href={project.href}
+          transitionName={project.transitionName}
+          class="flex flex-col justify-between hover:border-neutral-700 animate-scale-in"
+        >
+          <div>
+            <div class="flex justify-between items-start mb-2 gap-2">
+              <div class="flex flex-col gap-1.5">
+                <h2 class="text-xl font-bold text-neutral-100 break-words leading-tight">
+                  {project.title}
+                </h2>
+                {project.category && (
+                  <span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+                    {project.category}
+                  </span>
+                )}
+              </div>
+              <span
+                class:list={[
+                  "text-[11px] font-mono border px-2 py-0.5 rounded-full shrink-0 whitespace-nowrap",
+                  badgeAccent[project.tagAccent],
+                ]}
+              >
+                {project.tag}
+              </span>
+            </div>
+            <p class="text-neutral-400 text-sm leading-relaxed line-clamp-3">
+              {project.description}
+            </p>
+          </div>
+          <div class="flex gap-1.5 flex-wrap mt-4">
+            {project.stack.slice(0, 4).map((tech) => (
+              <span class="px-2.5 py-0.5 bg-neutral-800 rounded-md text-[11px] text-neutral-300 font-mono">
+                {tech}
+              </span>
+            ))}
+            {project.stack.length > 4 && (
+              <span class="px-2.5 py-0.5 bg-neutral-800/50 rounded-md text-[11px] text-neutral-500 font-mono">
+                +{project.stack.length - 4}
+              </span>
+            )}
+          </div>
+        </BentoCard>
+      ))}
+    </div>
+
+    <footer class="mt-20 pt-8 border-t border-neutral-800 text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Projects Archive • 2026
+      </p>
+    </footer>
+  </main>
+</Layout>

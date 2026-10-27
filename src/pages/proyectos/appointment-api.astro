@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout
   title="Appointment Management API | Miller Arias"
-  description="Appointment Management API: proyecto backend de Miller Arias para la gestión de citas, con arquitectura de API y persistencia de datos."
+  description="Appointment Management API: Miller Arias' backend project for appointment management, featuring API architecture and data persistence."
 >
   <main
     class="max-w-3xl mx-auto mt-16 md:mt-24"
@@ -17,7 +17,7 @@ import Layout from "../../layouts/Layout.astro";
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
       </span>
-      Volver al bento
+      Back to home
     </a>
 
     <header class="mb-12 mt-11">
@@ -33,9 +33,9 @@ import Layout from "../../layouts/Layout.astro";
         Appointment Management API
       </h1>
       <p class="text-neutral-400 text-lg leading-relaxed">
-        Sistema robusto de agendamiento y gestión de citas clínicas. Diseñado
-        mediante un backend corporativo con validación estricta de esquemas
-        relacionales y un cliente SPA modular de alto rendimiento.
+        Robust clinical appointment scheduling and management system. Designed
+        with an enterprise backend featuring strict validation of relational
+        schemas and a high-performance modular SPA client.
       </p>
 
       <div class="mt-6">
@@ -45,7 +45,7 @@ import Layout from "../../layouts/Layout.astro";
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 text-xs font-mono bg-neutral-900 text-neutral-300 hover:text-white border border-neutral-800 hover:border-neutral-700 px-4 py-2 rounded-xl transition active:scale-[0.99]"
         >
-          <span>Ver Repositorio en GitHub</span>
+          <span>View Repository on GitHub</span>
           <span class="text-neutral-600">↗</span>
         </a>
       </div>
@@ -55,7 +55,7 @@ import Layout from "../../layouts/Layout.astro";
 
     <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
-        Topología de la Arquitectura
+        Architecture Topology
       </h2>
 
       <div class="bg-neutral-900/30 border border-neutral-900 rounded-2xl p-6 font-mono text-xs relative overflow-hidden">
@@ -68,7 +68,8 @@ import Layout from "../../layouts/Layout.astro";
               <p class="text-neutral-200 font-bold text-sm">React 18 + Vite</p>
             </div>
             <p class="text-neutral-500 text-[11px] mt-3">
-              SPA Tipada con TypeScript, Axios para consumo HTTP y Tailwind CSS.
+              Typed SPA with TypeScript, Axios for HTTP requests, and Tailwind
+              CSS.
             </p>
           </div>
 
@@ -83,8 +84,8 @@ import Layout from "../../layouts/Layout.astro";
               <p class="text-neutral-200 font-bold text-sm">ASP.NET Core 8</p>
             </div>
             <p class="text-neutral-500 text-[11px] mt-3">
-              Validación a nivel de modelo, inyección de dependencias y ruteo
-              asíncrono.
+              Model-level validation, dependency injection, and asynchronous
+              routing.
             </p>
           </div>
 
@@ -98,8 +99,8 @@ import Layout from "../../layouts/Layout.astro";
               </p>
             </div>
             <p class="text-neutral-500 text-[11px] mt-3">
-              Mapeo Objeto-Relacional (ORM) automatizado mediante migraciones
-              estrictas.
+              Automated Object-Relational Mapping (ORM) through strict
+              migrations.
             </p>
           </div>
         </div>
@@ -108,12 +109,12 @@ import Layout from "../../layouts/Layout.astro";
 
     <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
-        Matriz de Endpoints (REST API)
+        API Endpoints (REST API)
       </h2>
       <div class="bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
         <div class="p-4 bg-neutral-950 border-b border-neutral-800 flex items-center justify-between">
           <span class="text-xs font-mono text-neutral-400">
-            Controlador base:{" "}
+            Base controller:{" "}
             <code class="text-purple-400">/api/appointments</code>
           </span>
           <span class="text-[10px] bg-neutral-900 px-2 py-0.5 border border-neutral-800 rounded text-neutral-500 font-mono">
@@ -124,9 +125,9 @@ import Layout from "../../layouts/Layout.astro";
           <table class="w-full text-left font-mono text-xs text-neutral-400 min-w-[500px]">
             <thead>
               <tr class="border-b border-neutral-800 text-neutral-500">
-                <th class="pb-2 font-normal w-24">Método</th>
-                <th class="pb-2 font-normal">Ruta del Endpoint</th>
-                <th class="pb-2 font-normal">Operación / Impacto</th>
+                <th class="pb-2 font-normal w-24">Method</th>
+                <th class="pb-2 font-normal">Endpoint Route</th>
+                <th class="pb-2 font-normal">Operation / Impact</th>
               </tr>
             </thead>
             <tbody>
@@ -134,35 +135,35 @@ import Layout from "../../layouts/Layout.astro";
                 <td class="py-3 font-bold text-emerald-400">GET</td>
                 <td class="py-3 text-neutral-200">/api/appointments</td>
                 <td class="py-3 text-neutral-500">
-                  Listado completo con paginación integrada.
+                  Full listing with built-in pagination.
                 </td>
               </tr>
               <tr class="border-b border-neutral-800/50">
                 <td class="py-3 font-bold text-emerald-400">GET</td>
                 <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
                 <td class="py-3 text-neutral-500">
-                  Búsqueda atómica por ID único en base relacional.
+                  Atomic lookup by unique ID in the relational database.
                 </td>
               </tr>
               <tr class="border-b border-neutral-800/50">
                 <td class="py-3 font-bold text-blue-400">POST</td>
                 <td class="py-3 text-neutral-200">/api/appointments</td>
                 <td class="py-3 text-neutral-500">
-                  Creación e inserción con validación asíncrona.
+                  Creation and insertion with asynchronous validation.
                 </td>
               </tr>
               <tr class="border-b border-neutral-800/50">
                 <td class="py-3 font-bold text-amber-400">PUT</td>
                 <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
                 <td class="py-3 text-neutral-500">
-                  Mutación completa de datos de la cita y estados.
+                  Full mutation of appointment data and statuses.
                 </td>
               </tr>
               <tr>
                 <td class="py-3 font-bold text-red-400">DELETE</td>
                 <td class="py-3 text-neutral-200">/api/appointments/{"id"}</td>
                 <td class="py-3 text-neutral-500">
-                  Remoción física del registro mediante Entity Framework.
+                  Physical removal of the record via Entity Framework.
                 </td>
               </tr>
             </tbody>
@@ -173,21 +174,20 @@ import Layout from "../../layouts/Layout.astro";
 
     <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
-        Contrato de Datos (Esquema JSON)
+        Data Contract (JSON Schema)
       </h2>
       <p class="text-neutral-400 text-sm mb-4 leading-relaxed">
-        Garantía de integridad de ciclo de vida para los estados transaccionales
-        permitidos (
+        Lifecycle integrity guarantee for the allowed transactional states (
         <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">
-          pendiente
+          pending
         </code>
         ,{" "}
         <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">
-          confirmada
+          confirmed
         </code>
         ,{" "}
         <code class="text-xs bg-neutral-900 px-1.5 py-0.5 rounded text-neutral-300">
-          cancelada
+          cancelled
         </code>
         ).
       </p>
@@ -200,7 +200,7 @@ import Layout from "../../layouts/Layout.astro";
           <pre class="text-neutral-300"><code>{"{"}
   <span class="text-purple-400">"clientName"</span>: <span class="text-cyan-400">"John Doe"</span>,
   <span class="text-purple-400">"date"</span>: <span class="text-cyan-400">"2024-12-01T10:00:00"</span>,
-  <span class="text-purple-400">"status"</span>: <span class="text-cyan-400">"pendiente"</span>
+  <span class="text-purple-400">"status"</span>: <span class="text-cyan-400">"pending"</span>
 {"}"}</code></pre>
         </div>
 
@@ -212,7 +212,7 @@ import Layout from "../../layouts/Layout.astro";
   <span class="text-purple-400">"id"</span>: <span class="text-orange-400">1</span>,
   <span class="text-purple-400">"clientName"</span>: <span class="text-cyan-400">"John Doe"</span>,
   <span class="text-purple-400">"date"</span>: <span class="text-cyan-400">"2024-12-01T10:00:00"</span>,
-  <span class="text-purple-400">"status"</span>: <span class="text-cyan-400">"pendiente"</span>,
+  <span class="text-purple-400">"status"</span>: <span class="text-cyan-400">"pending"</span>,
   <span class="text-purple-400">"createdAt"</span>: <span class="text-neutral-500">"2024-10-03..."</span>
 {"}"}</code></pre>
         </div>
@@ -221,31 +221,31 @@ import Layout from "../../layouts/Layout.astro";
 
     <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
-        Estrategia de Desarrollo & Control de Calidad
+        Development Strategy & Quality Control
       </h2>
       <div class="space-y-6">
         <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
           <h3 class="text-sm font-mono text-purple-400 uppercase tracking-wider mb-2">
-            Validación Dual (Client & Server Side)
+            Dual Validation (Client & Server Side)
           </h3>
           <p class="text-neutral-400 text-sm leading-relaxed">
-            La consistencia de los datos está blindada perimetralmente. El
-            frontend intercepta cadenas vacías o fechas inválidas antes de
-            consumir red, mientras que el backend ejecuta filtros estrictos
-            mediante <strong>Data Annotations</strong> nativas de C#, evitando
-            corrupciones o payloads maliciosos directo en la base PostgreSQL.
+            Data consistency is protected on every perimeter. The frontend
+            intercepts empty strings or invalid dates before consuming the
+            network, while the backend executes strict filters using native C#
+            <strong>Data Annotations</strong>, preventing corruption or
+            malicious payloads from reaching the PostgreSQL database directly.
           </p>
         </div>
 
         <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
           <h3 class="text-sm font-mono text-emerald-400 uppercase tracking-wider mb-2">
-            Eficiencia en Volumen: Paginación Nativa
+            Volume Efficiency: Native Pagination
           </h3>
           <p class="text-neutral-400 text-sm leading-relaxed">
-            En lugar de saturar la memoria RAM del cliente transmitiendo cientos
-            de registros simultáneos, el controlador expone parámetros numéricos
-            de paginación que segmentan la respuesta a nivel de base de datos
-            gracias a las directivas de filtrado diferido en{" "}
+            Instead of saturating the client's RAM by transmitting hundreds of
+            records simultaneously, the controller exposes numeric pagination
+            parameters that segment the response at the database level thanks to
+            deferred filtering directives in{" "}
             <strong>LINQ / Entity Framework Core</strong>.
           </p>
         </div>
@@ -254,7 +254,7 @@ import Layout from "../../layouts/Layout.astro";
 
     <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
       <p class="text-xs font-mono text-neutral-500">
-        Miller Arias • Detalle Técnico del Proyecto • 2026
+        Miller Arias • Technical Project Details • 2026
       </p>
     </footer>
   </main>

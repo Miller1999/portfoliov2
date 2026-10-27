@@ -4,11 +4,11 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout
   title="Devup Consulting SAS | Miller Arias"
-  description="Experiencia de Miller Arias en Devup Consulting SAS: desarrollo full stack en plataforma open-source de telecomunicaciones con Go, React, Relay y GraphQL."
+  description="Miller Arias' experience at Devup Consulting SAS: full stack development on an open-source telecommunications platform with Go, React, Relay, and GraphQL."
 >
-  <!-- Contenedor Principal con transiciones de página -->
+  <!-- Main Container with page transitions -->
   <main class="max-w-3xl mx-auto mt-16 md:mt-24" transition:name="card-status">
-    <!-- Botón de retorno -->
+    <!-- Back button -->
     <a
       href="/"
       class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-cyan-400 transition-colors group"
@@ -16,14 +16,14 @@ import Layout from "../../layouts/Layout.astro";
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
       </span>
-      Volver al bento
+      Back to the bento
     </a>
 
-    <!-- CABECERA DE EXPERIENCIA -->
+    <!-- EXPERIENCE HEADER -->
     <header class="mb-12 mt-11">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono rounded-full uppercase tracking-wider">
-          Experiencia Actual
+          Current Experience
         </span>
         <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
           B2B / Enterprise Telecom
@@ -36,24 +36,23 @@ import Layout from "../../layouts/Layout.astro";
         Full Stack Developer (React & Go)
       </h2>
       <p class="text-neutral-400 text-lg leading-relaxed">
-        Desarrollo y optimización de interfaces y servicios core para una
-        plataforma de gestión de redes y telecomunicaciones. Orientado a
-        garantizar la integridad de datos, resiliencia del sistema y una
-        usabilidad impecable para clientes corporativos de alto nivel (como VIVO
-        y NTT).
+        Development and optimization of core interfaces and services for a
+        network and telecommunications management platform. Focused on
+        guaranteeing data integrity, system resilience, and impeccable usability
+        for high-level corporate clients (such as VIVO and NTT).
       </p>
     </header>
 
     <hr class="border-neutral-900 my-12" />
 
-    <!-- IMPACTO Y LOGROS TÉCNICOS -->
+    <!-- IMPACT AND TECHNICAL ACHIEVEMENTS -->
     <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
-        Iniciativas Core: Fast Track & Usabilidad
+        Core Initiatives: Fast Track & Usability
       </h2>
 
       <div class="space-y-6">
-        <!-- Logro 1: Prevención de Errores DB -->
+        <!-- Achievement 1: DB Error Prevention -->
         <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
           <div class="flex items-start gap-4">
             <div class="mt-1 w-8 h-8 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold shrink-0">
@@ -61,31 +60,29 @@ import Layout from "../../layouts/Layout.astro";
             </div>
             <div>
               <h3 class="text-base font-bold text-neutral-200 mb-2">
-                Protección de Persistencia y Prevención de Truncamiento (Error
-                1406)
+                Persistence Protection and Truncation Prevention (Error 1406)
               </h3>
               <p class="text-neutral-400 text-sm leading-relaxed mb-3">
-                Identifiqué y resolví vulnerabilidades de validación donde
-                *payloads* masivos (más de 255 caracteres en configuraciones de
-                reportes) eran rechazados directamente por la base de datos
-                MySQL con el{" "}
+                I identified and resolved validation vulnerabilities where
+                massive *payloads* (more than 255 characters in report
+                configurations) were rejected directly by the MySQL database
+                with the{" "}
                 <code class="bg-neutral-950 px-1 py-0.5 rounded text-xs border border-neutral-800">
                   Error 1406 (22001): Data too long
                 </code>
                 .
               </p>
               <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg border border-emerald-500/20">
-                <strong>Solución implementada:</strong> Arquitectura de
-                validación estricta en el Front-End (React) para interceptar
-                cadenas largas e inputs no controlados antes del consumo de la
-                API, reduciendo la carga del servidor y previniendo caídas
-                silenciosas.
+                <strong>Solution implemented:</strong> Strict validation
+                architecture in the Front-End (React) to intercept long strings
+                and uncontrolled inputs before API consumption, reducing server
+                load and preventing silent crashes.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Logro 2: Sanitización de Inputs y Lógica de Negocio -->
+        <!-- Achievement 2: Input Sanitization and Business Logic -->
         <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
           <div class="flex items-start gap-4">
             <div class="mt-1 w-8 h-8 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold shrink-0">
@@ -93,30 +90,29 @@ import Layout from "../../layouts/Layout.astro";
             </div>
             <div>
               <h3 class="text-base font-bold text-neutral-200 mb-2">
-                Sanitización de Umbrales y Algoritmos de Performance
+                Threshold Sanitization and Performance Algorithms
               </h3>
               <p class="text-neutral-400 text-sm leading-relaxed mb-3">
-                En el módulo de <em>Gerenciamento de Performance</em> (KPI
-                Views), el sistema permitía la inserción de métricas lógicamente
-                imposibles (ej. tiempo mínimo de 0, o valores numéricos
-                desbordados como{" "}
+                In the <em>Performance Management</em> module (KPI Views), the
+                system allowed the insertion of logically impossible metrics
+                (e.g., a minimum time of 0, or overflowing numeric values such
+                as{" "}
                 <code class="bg-neutral-950 px-1 py-0.5 rounded text-xs border border-neutral-800">
                   9999999999999999999
                 </code>
                 ).
               </p>
               <div class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg border border-emerald-500/20">
-                <strong>Solución implementada:</strong> Desarrollo de
-                guardarraíles (guardrails) en la UI que bloquean el guardado de
-                umbrales inválidos e inyectan feedback visual inmediato,
-                asegurando que las métricas enviadas al backend en Go sean 100%
-                coherentes y operables.
+                <strong>Solution implemented:</strong> Development of UI
+                guardrails that block saving invalid thresholds and inject
+                immediate visual feedback, ensuring that the metrics sent to the
+                Go backend are 100% coherent and operable.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Logro 3: Alineación Cliente/Servidor -->
+        <!-- Achievement 3: Client/Server Alignment -->
         <div class="bg-neutral-900/40 border border-neutral-800 p-6 rounded-2xl">
           <div class="flex items-start gap-4">
             <div class="mt-1 w-8 h-8 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold shrink-0">
@@ -124,15 +120,15 @@ import Layout from "../../layouts/Layout.astro";
             </div>
             <div>
               <h3 class="text-base font-bold text-neutral-200 mb-2">
-                Alineación de Experiencia de Usuario (Coherencia Front/Back)
+                User Experience Alignment (Front/Back Coherence)
               </h3>
               <p class="text-neutral-400 text-sm leading-relaxed">
-                Lideré la unificación de los mensajes de error entre las
-                validaciones del servidor y la interfaz del usuario. Atendiendo
-                requerimientos de clientes corporativos (alineamientos con NTT
-                COE y Vivo), garanticé que los fallos del backend se tradujeran
-                en alertas amigables y accionables, bloqueando configuraciones
-                indebidas que invalidaban el uso de los módulos de alarmas.
+                I led the unification of error messages between server
+                validations and the user interface. Meeting corporate client
+                requirements (alignments with NTT COE and Vivo), I ensured that
+                backend failures were translated into friendly, actionable
+                alerts, blocking improper configurations that invalidated the
+                use of alarm modules.
               </p>
             </div>
           </div>
@@ -140,10 +136,10 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <!-- STACK TECNOLÓGICO -->
+    <!-- TECHNOLOGY STACK -->
     <section class="mb-[5.5rem]">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-4">
-        Entorno Técnico & Herramientas
+        Technical Environment & Tools
       </h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono text-xs text-center">
         <div class="bg-neutral-900 border border-neutral-800 p-3 rounded-xl text-neutral-300">
@@ -173,10 +169,10 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <!-- FOOTER DE LA PÁGINA -->
+    <!-- PAGE FOOTER -->
     <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
       <p class="text-xs font-mono text-neutral-500">
-        Miller Arias • Experiencia Profesional • Devup Consulting SAS
+        Miller Arias • Professional Experience • Devup Consulting SAS
       </p>
     </footer>
   </main>

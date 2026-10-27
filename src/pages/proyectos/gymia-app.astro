@@ -1,0 +1,113 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Gymia App | Miller Arias"
+  description="Gymia App - Workout app with routine tracking, statistics, and a client-server architecture."
+>
+  <main
+    class="max-w-3xl mx-auto mt-16 md:mt-24"
+    transition:name="card-project-gymia"
+  >
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 py-3 text-sm font-mono text-neutral-500 hover:text-purple-400 transition-colors group"
+    >
+      <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
+        ←
+      </span>
+      Back to home
+    </a>
+
+    <header class="mb-12 mt-11">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono rounded-full uppercase tracking-wider">
+          Fitness Tech
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-400 text-xs font-mono rounded-full">
+          Client-Server
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+        Gymia App
+      </h1>
+      <p class="text-neutral-400 text-lg leading-relaxed">
+        Mobile app for workout routine tracking, exercise management, and
+        statistics, with an Express backend and a React Native client.
+      </p>
+    </header>
+
+    <hr class="border-neutral-900 my-12" />
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Tech Stack
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          React Native
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Expo SDK 57
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          TypeScript
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Express.js
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Drizzle ORM
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Zustand
+        </span>
+        <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-xs text-neutral-200 font-mono">
+          Expo SQLite
+        </span>
+      </div>
+    </section>
+
+    <section class="mb-[5.5rem]">
+      <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-6">
+        Key Features
+      </h2>
+      <div class="space-y-4">
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Workout Tracking
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Complete management of routines, sets, reps, and progress tracking
+            with detailed history.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            Hybrid Architecture
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Mobile client with global state via Zustand and a REST backend with
+            Express for synchronization and business logic.
+          </p>
+        </div>
+        <div class="bg-neutral-900/40 border border-neutral-900 p-5 rounded-2xl">
+          <h3 class="text-sm font-semibold text-neutral-200 mb-2">
+            End-to-End Type Safety
+          </h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Zod validation shared between client and server, with strict typing
+            across the entire stack.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-24 pt-8 border-t border-neutral-800 text-center">
+      <p class="text-xs font-mono text-neutral-500">
+        Miller Arias • Gymia App • 2026
+      </p>
+    </footer>
+  </main>
+</Layout>

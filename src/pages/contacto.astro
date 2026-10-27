@@ -4,8 +4,8 @@ import { profile } from "../data/profile";
 ---
 
 <Layout
-  title="Contacto | Miller Arias"
-  description="Ponte en contacto con Miller Arias, Full Stack Developer en Bogotá, Colombia. Disponible para nuevas oportunidades y colaboraciones."
+  title="Contact | Miller Arias"
+  description="Get in touch with Miller Arias, Full Stack Developer in Bogotá, Colombia. Available for new opportunities and collaborations."
 >
   <main class="max-w-xl mx-auto mt-16 md:mt-32" transition:name="card-contacto">
     <a
@@ -15,31 +15,31 @@ import { profile } from "../data/profile";
       <span class="inline-block transform group-hover:-translate-x-1 transition-transform">
         ←
       </span>
-      Volver al bento
+      Back to home
     </a>
 
     <header class="mb-12 mt-14">
       <p class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">
-        Hablemos de ingeniería
+        Let's talk engineering
       </p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-100 mb-4">
-        Contacto
+        Contact
       </h1>
       <p class="text-neutral-400 text-base leading-relaxed">
-        ¿Tienes un reto técnico, una vacante o un sistema que requiera
-        arquitectura moderna? Conectemos directamente sin intermediarios.
+        Do you have a technical challenge, a job opening, or a system that needs
+        modern architecture? Let's connect directly, without middlemen.
       </p>
     </header>
 
     <section class="mb-6">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">
-        Correo Electrónico
+        Email
       </h2>
       <button
         id="copy-email-btn"
         data-email={profile.email}
         class="w-full bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 text-left transition active:scale-[0.99] group cursor-pointer"
-        title="Click para copiar correo"
+        title="Click to copy email"
       >
         <div class="min-w-0">
           <span class="text-lg md:text-xl font-semibold text-neutral-200 block group-hover:text-cyan-400 transition-colors overflow-wrap-anywhere">
@@ -50,18 +50,18 @@ import { profile } from "../data/profile";
             aria-live="polite"
             class="text-xs font-mono text-neutral-500 block mt-1 transition-colors"
           >
-            Haz click en cualquier parte de este cuadro para copiar
+            Click anywhere in this box to copy
           </span>
         </div>
         <div class="shrink-0 bg-neutral-950 border border-neutral-800/80 px-3 py-1.5 rounded-xl text-xs font-mono text-neutral-400 group-hover:text-white transition-colors">
-          Copiar <span aria-hidden="true">📋</span>
+          Copy <span aria-hidden="true">📋</span>
         </div>
       </button>
     </section>
 
     <section class="space-y-3">
       <h2 class="text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">
-        Canales Directos
+        Direct Channels
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -76,7 +76,7 @@ import { profile } from "../data/profile";
               LinkedIn
             </span>
             <span class="text-[11px] font-mono text-neutral-500">
-              Perfil Profesional
+              Professional Profile
             </span>
           </div>
           <span class="text-neutral-600 group-hover:text-neutral-300 text-lg transition-colors">
@@ -85,7 +85,7 @@ import { profile } from "../data/profile";
         </a>
 
         <a
-          href={`https://wa.me/${profile.phone}?text=${encodeURIComponent("Hola Miller, vi tu portafolio y me gustaría que habláramos.")}`}
+          href={`https://wa.me/${profile.phone}?text=${encodeURIComponent("Hi Miller, I saw your portfolio and I'd like to talk.")}`}
           target="_blank"
           rel="noopener noreferrer"
           class="bg-neutral-900/40 border border-neutral-900 hover:border-neutral-800 rounded-xl p-4 flex items-center justify-between group transition active:scale-[0.99]"
@@ -95,7 +95,7 @@ import { profile } from "../data/profile";
               WhatsApp
             </span>
             <span class="text-[11px] font-mono text-neutral-500">
-              Respuesta Rápida
+              Fast Response
             </span>
           </div>
           <span class="text-neutral-600 group-hover:text-emerald-400 text-lg transition-colors">
@@ -114,7 +114,7 @@ import { profile } from "../data/profile";
               GitHub Repositories
             </span>
             <span class="text-[11px] font-mono text-neutral-500">
-              Explora mis commits, arquitecturas y código fuente
+              Explore my commits, architectures, and source code
             </span>
           </div>
           <span class="text-neutral-600 group-hover:text-white text-lg transition-colors">
@@ -126,12 +126,12 @@ import { profile } from "../data/profile";
 
     <footer class="mt-16 text-center">
       <p class="text-xs font-mono text-neutral-500">
-        <span aria-hidden="true">📍</span> Bogotá, Colombia • Zona Horaria UTC-5
+        <span aria-hidden="true">📍</span> Bogotá, Colombia • UTC-5 Time Zone
       </p>
     </footer>
   </main>
 
-  <!-- SCRIPT DE COPIADO AL PORTAPAPELES COMPATIBLE CON CLIENTROUTER -->
+  <!-- CLIPBOARD COPY SCRIPT COMPATIBLE WITH CLIENTROUTER -->
   <script is:inline>
     document.addEventListener("astro:page-load", () => {
       const copyBtn = document.getElementById("copy-email-btn");
@@ -145,7 +145,7 @@ import { profile } from "../data/profile";
         const email = copyBtn.dataset.email || "";
         try {
           await navigator.clipboard.writeText(email);
-          statusText.textContent = "¡Copiado exitosamente al portapapeles! 🎉";
+          statusText.textContent = "Successfully copied to clipboard! 🎉";
           statusText.classList.remove("text-neutral-500");
           statusText.classList.add("text-cyan-400");
           setTimeout(() => {
@@ -155,7 +155,7 @@ import { profile } from "../data/profile";
           }, 2500);
         } catch {
           statusText.textContent =
-            "No se pudo copiar. Selecciona el correo manualmente.";
+            "Could not copy. Please select the email manually.";
           statusText.classList.remove("text-neutral-500");
           statusText.classList.add("text-red-400");
         }
